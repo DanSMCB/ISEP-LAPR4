@@ -1,0 +1,52 @@
+@startuml
+
+
+class User {
+  +username: String
+  +findByUsername(username: String): User
+}
+
+class SharedBoard {
+  +owner: User
+  +usersWithAccess: Set<User>
+  +accessType: AccessType
+}
+
+enum AccessType {
+  READ
+  WRITE
+}
+
+class ShareBoardUI {
+  +shareBoard(ownerUsername: String, userToShareUsername: String, accessType: String)
+  +showSuccessMessage(message: String)
+  +showErrorMessage(message: String)
+}
+
+class ShareBoardController {
+  -shareBoard(ownerUsername: String, userToShareUsername: String, accessType: String)
+}
+
+class ShareBoardService {
+  -shareBoard(ownerUsername: String, userToShareUsername: String, accessType: String)
+}
+
+class SharedBoardRepository {
+  +findSharedBoardsByOwner(owner: User): Set<SharedBoard>
+}
+
+class SystemUserRepository {
+  +findByUsername(username: String): User
+}
+
+User "1" *-- "1" SystemUserRepository: Uses
+ShareBoardUI "1" *-- "1" ShareBoardController: Uses
+ShareBoardController "1" *-- "1" ShareBoardService: Uses
+ShareBoardService "1" *-- "1" SharedBoardRepository: Uses
+ShareBoardService "1" *-- "1" SystemUserRepository: Uses
+ShareBoardController "1" *-- "1" ShareBoardUI: Sends
+
+User "1" *-- "*" SharedBoard: Owns
+SharedBoard "1" *-- "*" User: Has access
+
+@enduml

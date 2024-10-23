@@ -1,0 +1,16 @@
+Teste: {
+    ID: 1,
+    Título: "Exame Formativo de Literatura Inglesa",
+    Secção ID: 1, {
+        Descrição Textual: "Analise de Poesia",
+        Dificuldade: 3,
+        Limite de Perguntas: 5,
+        Tipo de Pergunta: "Escolha Múltipla"
+    },
+    Secção ID: 2, {
+        Descrição Textual: "Analise de Prosa",
+        Dificuldade: 2,
+        Limite de Perguntas: 3,
+        Tipo de Pergunta: "Resposta Curta"
+    }
+}

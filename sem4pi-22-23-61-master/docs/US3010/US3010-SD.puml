@@ -1,0 +1,55 @@
+@startuml
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor SystemUser as Actor
+participant SharedBoardArchiveUI as UI
+participant AuthzRegistry as AuthzRes
+participant AuthorizationService as AuthzSvc
+participant UserSession as UserS
+participant SharedBoardArchiveController as Controller
+participant SharedBoardArchiveService as Service
+participant SharedBoardRepository as Repo
+participant "theSharedBoard:SharedBoard" as SharedBoard
+
+activate Actor
+Actor -> UI : wants to archive a board
+activate UI
+UI -> AuthzRes : authz=authorizationService()
+activate AuthzRes
+deactivate AuthzRes
+
+UI -> AuthzSvc : s=session()
+activate AuthzSvc
+deactivate AuthzSvc
+
+UI -> UserS : myUser=authenticatedUser()
+activate UserS
+deactivate UserS
+
+UI -> Controller: archiveBoard(title, currentUser)
+activate Controller
+Controller -> Service : archiveBoard(title, currentUser)
+activate Service
+Service -> Repo : findByBoardId(title)
+activate Repo
+deactivate Repo
+Service -> SharedBoard : archiveBoard()
+activate SharedBoard
+SharedBoard -> SharedBoard : set isArchived=true
+SharedBoard -> SharedBoard : Update access type for shared users
+SharedBoard -> Repo : save(board)
+activate Repo
+deactivate Repo
+deactivate SharedBoard
+deactivate Service
+deactivate Controller
+UI -> Actor : Display Message "Board has been Archived"
+deactivate Actor
+deactivate UI
+
+
+@enduml

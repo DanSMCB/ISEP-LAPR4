@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="base.app.backoffice.console" target="11" />
+      <module name="base.app.bootstrap" target="11" />
+      <module name="base.app.common.console" target="11" />
+      <module name="base.app.other.console" target="11" />
+      <module name="base.app.user.console" target="11" />
+      <module name="base.bootstrappers" target="11" />
+      <module name="base.core" target="11" />
+      <module name="base.infrastructure.application" target="11" />
+      <module name="base.persistence.impl" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

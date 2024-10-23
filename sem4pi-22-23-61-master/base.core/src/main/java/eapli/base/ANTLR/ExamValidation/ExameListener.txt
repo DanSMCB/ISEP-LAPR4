@@ -1,0 +1,170 @@
+// Generated from C:/Users/mike_/OneDrive/Documentos/sem4pi-22-23-61/base.core/src/main/java/eapli/base/ANTLR/ExamValidation\Exame.g4 by ANTLR 4.12.0
+package eapli.base.ANTLR.ExamValidation;
+import org.antlr.v4.runtime.tree.ParseTreeListener;
+
+/**
+ * This interface defines a complete listener for a parse tree produced by
+ * {@link ExameParser}.
+ */
+public interface ExameListener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#prog}.
+	 * @param ctx the parse tree
+	 */
+	void enterProg(ExameParser.ProgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#prog}.
+	 * @param ctx the parse tree
+	 */
+	void exitProg(ExameParser.ProgContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#exame}.
+	 * @param ctx the parse tree
+	 */
+	void enterExame(ExameParser.ExameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#exame}.
+	 * @param ctx the parse tree
+	 */
+	void exitExame(ExameParser.ExameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#corpo_exame}.
+	 * @param ctx the parse tree
+	 */
+	void enterCorpo_exame(ExameParser.Corpo_exameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#corpo_exame}.
+	 * @param ctx the parse tree
+	 */
+	void exitCorpo_exame(ExameParser.Corpo_exameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#seccao}.
+	 * @param ctx the parse tree
+	 */
+	void enterSeccao(ExameParser.SeccaoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#seccao}.
+	 * @param ctx the parse tree
+	 */
+	void exitSeccao(ExameParser.SeccaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#pergunta}.
+	 * @param ctx the parse tree
+	 */
+	void enterPergunta(ExameParser.PerguntaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#pergunta}.
+	 * @param ctx the parse tree
+	 */
+	void exitPergunta(ExameParser.PerguntaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#corpo}.
+	 * @param ctx the parse tree
+	 */
+	void enterCorpo(ExameParser.CorpoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#corpo}.
+	 * @param ctx the parse tree
+	 */
+	void exitCorpo(ExameParser.CorpoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#verdadeiro_falso}.
+	 * @param ctx the parse tree
+	 */
+	void enterVerdadeiro_falso(ExameParser.Verdadeiro_falsoContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#verdadeiro_falso}.
+	 * @param ctx the parse tree
+	 */
+	void exitVerdadeiro_falso(ExameParser.Verdadeiro_falsoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#palavras_em_falta}.
+	 * @param ctx the parse tree
+	 */
+	void enterPalavras_em_falta(ExameParser.Palavras_em_faltaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#palavras_em_falta}.
+	 * @param ctx the parse tree
+	 */
+	void exitPalavras_em_falta(ExameParser.Palavras_em_faltaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#resposta_falta}.
+	 * @param ctx the parse tree
+	 */
+	void enterResposta_falta(ExameParser.Resposta_faltaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#resposta_falta}.
+	 * @param ctx the parse tree
+	 */
+	void exitResposta_falta(ExameParser.Resposta_faltaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#numerica}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumerica(ExameParser.NumericaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#numerica}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumerica(ExameParser.NumericaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#resposta_curta}.
+	 * @param ctx the parse tree
+	 */
+	void enterResposta_curta(ExameParser.Resposta_curtaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#resposta_curta}.
+	 * @param ctx the parse tree
+	 */
+	void exitResposta_curta(ExameParser.Resposta_curtaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#escolha_multipla}.
+	 * @param ctx the parse tree
+	 */
+	void enterEscolha_multipla(ExameParser.Escolha_multiplaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#escolha_multipla}.
+	 * @param ctx the parse tree
+	 */
+	void exitEscolha_multipla(ExameParser.Escolha_multiplaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#opcao_escolha_multipla}.
+	 * @param ctx the parse tree
+	 */
+	void enterOpcao_escolha_multipla(ExameParser.Opcao_escolha_multiplaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#opcao_escolha_multipla}.
+	 * @param ctx the parse tree
+	 */
+	void exitOpcao_escolha_multipla(ExameParser.Opcao_escolha_multiplaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#correspondencia}.
+	 * @param ctx the parse tree
+	 */
+	void enterCorrespondencia(ExameParser.CorrespondenciaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#correspondencia}.
+	 * @param ctx the parse tree
+	 */
+	void exitCorrespondencia(ExameParser.CorrespondenciaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#token_correspondencia}.
+	 * @param ctx the parse tree
+	 */
+	void enterToken_correspondencia(ExameParser.Token_correspondenciaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#token_correspondencia}.
+	 * @param ctx the parse tree
+	 */
+	void exitToken_correspondencia(ExameParser.Token_correspondenciaContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExameParser#respostas_correspondencia}.
+	 * @param ctx the parse tree
+	 */
+	void enterRespostas_correspondencia(ExameParser.Respostas_correspondenciaContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExameParser#respostas_correspondencia}.
+	 * @param ctx the parse tree
+	 */
+	void exitRespostas_correspondencia(ExameParser.Respostas_correspondenciaContext ctx);
+}

@@ -1,0 +1,17 @@
+@startuml US1007-SSD
+
+autonumber
+actor "Manager" as MAN
+
+
+activate MAN
+MAN -> ":System" : Asks to enroll students in bulk
+activate ":System"
+":System" --> MAN : Requests the csv file containing the data
+deactivate ":System"
+MAN -> ":System" : Inserts csv file
+activate ":System"
+":System" --> MAN : Confirms/Declines operation
+deactivate ":System"
+
+@enduml

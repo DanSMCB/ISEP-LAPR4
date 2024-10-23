@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ANTLRGenerationPreferences">
+    <option name="perGrammarGenerationSettings">
+      <list>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/base.core/src/main/java/eapli/base/ANTLR/ExamValidation/Exam.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\mike_\OneDrive\Documentos\sem4pi-22-23-61\base.core\src\main\java\eapli\base\ANTLR\ExamValidation" />
+          <option name="libDir" value="C:\Users\mike_\OneDrive\Documentos\sem4pi-22-23-61\base.core\src\main\java\eapli\base\ANTLR\ExamValidation" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/base.core/src/main/java/eapli/base/ANTLR/ExamValidation/Exame.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\mike_\OneDrive\Documentos\sem4pi-22-23-61\base.core\src\main\java\eapli\base\ANTLR\ExamValidation" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/base.core/src/main/java/eapli/base/ANTLR/QuestionValidation/Question.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\mike_\OneDrive\Documentos\sem4pi-22-23-61\base.core\src\main\java\eapli\base\ANTLR\QuestionValidation" />
+          <option name="libDir" value="C:\Users\mike_\OneDrive\Documentos\sem4pi-22-23-61\base.core\src\main\java\eapli\base\ANTLR\QuestionValidation" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="" />
+          <option name="language" value="" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+      </list>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/base.app.backoffice.console/pom.xml" />
+        <option value="$PROJECT_DIR$/base.app.bootstrap/pom.xml" />
+        <option value="$PROJECT_DIR$/base.app.common.console/pom.xml" />
+        <option value="$PROJECT_DIR$/base.app.other.console/pom.xml" />
+        <option value="$PROJECT_DIR$/base.app.user.console/pom.xml" />
+        <option value="$PROJECT_DIR$/base.bootstrappers/pom.xml" />
+        <option value="$PROJECT_DIR$/base.core/pom.xml" />
+        <option value="$PROJECT_DIR$/base.infrastructure.application/pom.xml" />
+        <option value="$PROJECT_DIR$/base.persistence.impl/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="openjdk-18" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
+</project>

@@ -1,0 +1,16 @@
+@startuml
+
+actor Teacher #DeepSkyBlue
+
+Teacher -> CreateExamUI : createExam()
+CreateExamUI --> Teacher : Prompt for exam details
+Teacher -> CreateExamUI : provide exam details
+CreateExamUI -> Course : getCourses()
+Course --> CreateExamUI : Return list of courses
+CreateExamUI -> CreateExamController : createExam()
+CreateExamController -> Exam : Exam(title, date, openTime, closeTime, course)
+CreateExamController -> ExamRepository : save(exam)
+ExamRepository --> CreateExamController : Exam saved
+CreateExamController --> CreateExamUI : Exam created successfully
+CreateExamUI --> Teacher : Display exam created successfully
+@enduml

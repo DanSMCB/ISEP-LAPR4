@@ -1,0 +1,63 @@
+@startuml
+
+class CancelMeetingUI{}
+
+
+class CancelMeetingController{
+findById(meetingId)
+updateStatus(meeting, "Canceled")
+validateMeetingOwnership(meeting, myUser)
+}
+
+class AuthzRegistry{
+authorizationService()
+}
+
+class AuthorizationService{
+session()
+}
+class UserSession{
++authenticatedUser()
+}
+
+class Meeting {
+  +invite
+  +inviteState
+  +meetingDate
+  +meetingDuration
+  +meetingStatus
+  +meetingTime
+  +cancelMeeting(): void
+}
+
+enum MeetingStatus(){
+SCHEDULED
+  COMPLETED
+  CANCELED
+}
+
+class SystemUser {
+  +username
+  +username
+  +email
+  +password
+  +name
+}
+
+class MeetingRepository {
+  +save(meeting: Meeting): void
+  +update(meeting: Meeting): void
+  +delete(meeting: Meeting): void
+  +findById(meetingId: int): Meeting
+}
+
+
+Meeting "1" --> "*" SystemUser : participants
+Meeting "1" -- "1" SystemUser : createdBy
+Meeting --> MeetingRepository
+CancelMeetingUI --> CancelMeetingController
+CancelMeetingUI --> AuthzRegistry
+CancelMeetingUI --> UserSession
+CancelMeetingUI --> AuthorizationService
+CancelMeetingController --> Meeting
+@enduml

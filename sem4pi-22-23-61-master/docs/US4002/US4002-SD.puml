@@ -1,0 +1,46 @@
+@startuml
+'http://plantuml.com/skinparam.html
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor SystemUser as Actor
+participant CancelMeetingUI as UI
+participant AuthzRegistry as AuthzRes
+participant AuthorizationService as AuthzSvc
+participant UserSession as UserS
+participant MeetingRepository as Repo
+participant CancelMeetingController as Controller
+
+-> UI: Cancelar reunião
+activate UI
+    UI -> AuthzRes : authz=authorizationService()
+    activate AuthzRes
+    deactivate AuthzRes
+    UI -> AuthzSvc : s=session()
+    activate AuthzSvc
+    deactivate AuthzSvc
+    UI -> UserS : myUser=authenticatedUser()
+    activate UserS
+    deactivate UserS
+
+    UI -> Controller: create(authz, meetingRepository)
+    activate Controller
+    deactivate Controller
+    UI -> Controller: cancelMeeting(meetingId)
+    activate Controller
+        Controller -> Repo : findById(meetingId)
+        activate Repo
+        Repo --> Controller : meeting
+        deactivate Repo
+        Controller -> Controller : validateMeetingOwnership(meeting, myUser)
+        Controller -> Repo : updateStatus(meeting, "Canceled")
+        activate Repo
+        deactivate Repo
+    deactivate Controller
+
+    UI --> Actor : Estado da reunião alterado para "Cancelada"
+deactivate UI
+@enduml

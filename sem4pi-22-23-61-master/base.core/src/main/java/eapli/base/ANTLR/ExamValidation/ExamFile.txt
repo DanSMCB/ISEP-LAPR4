@@ -1,0 +1,89 @@
+Teste: {
+    ID: 1,
+    Título: Exame Final de Literatura Inglesa.
+    Secção ID: 1, {
+        Descrição Textual: Analise de Poesia.
+        Dificuldade: 3
+        Limite de Perguntas: 5
+        Perguntas:
+            Pergunta
+            ID: 1,
+            Enunciado: Qual e o tema do poema 'O Corvo'?
+            Tipo de Pergunta: Escolha Múltipla
+                Opções: [
+                    Opção 1: Amor;
+                    Opção 2: Desespero;
+                    Opção 3: Esperanca;
+                    Opção 4: Alegria;
+                    ]
+                Resposta: 2
+                    Cotação: 2
+                    Dificuldade: 2
+            Pergunta
+                ID: 2,
+                Enunciado: Identifica o dispositivo poetico usado na frase 'Ser ou nao ser'.
+                Tipo de Pergunta: Resposta Curta
+                Resposta: Metafora.
+                    Cotação: 3
+                    Dificuldade: 1
+                }
+    Secção
+        ID: 2, {
+        Descrição Textual: Analise de Prosa.
+        Dificuldade: 2
+        Limite de Perguntas: 3
+        Perguntas:
+            Pergunta
+                ID: 3,
+                Enunciado: Autor do romance 'Orgulho e Preconceito' e ___1___ ___2___?
+                Tipo de Pergunta: Palavras em Falta
+                Resposta: {
+                    Resposta 1: Jane
+                    Resposta 2: Austen
+                }
+                Cotação: 4
+                Dificuldade: 2
+
+            Pergunta
+                ID: 4,
+                Enunciado: Explique o significado da luz verde em 'O Grande Gatsby'.
+                Tipo de Pergunta: Resposta Curta
+                Resposta: Simboliza a esperanca e o Sonho Americano.
+                Cotação: 1
+                Dificuldade: 3
+           Pergunta
+                ID: 5,
+                Enunciado: Quantos campeonatos tem o Benfica?
+                Tipo de Pergunta: Numérica
+                Resposta: 38
+                Cotação: 1
+                Dificuldade: 3
+           Pergunta
+                ID: 6,
+                Enunciado: ceu e azul?
+                Tipo de Pergunta: Verdadeiro ou Falso
+                Resposta: Verdadeiro
+                Cotação: 1
+                Dificuldade: 3
+           Pergunta
+                ID: 7,
+                Enunciado: Conecte a tabela correspondente!
+                Tipo de Pergunta : Correspondência
+                Tabela A: [
+                Enunciado 1: APROG.
+                Enunciado 2: Chocolate.
+                ]
+                Tabela B: [
+                Enunciado 1: bom.
+                Enunciado 2: facil.
+                ]
+                Resposta :
+                Tabela A: 1 - Tabela B: 2
+                Tabela A: 2 - Tabela B: 1
+                Cotação: 1
+                Dificuldade: 3
+
+    }
+    Data Abertura: 30/05/2023 09:00
+    Data Fecho: 06/10/2023 17:00
+}

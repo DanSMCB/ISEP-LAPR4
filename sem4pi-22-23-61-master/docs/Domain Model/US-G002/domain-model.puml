@@ -1,0 +1,209 @@
+    @startuml
+    hide methods
+    top to bottom direction
+    skinparam linetype ortho
+
+
+    package Exam{
+     class Exam << (E,#FF7700) Entity >> {
+     }
+     class Open_Date<< (V,#008B8B) Value_Object >>{
+     }
+     class Close_Date<< (V,#008B8B) Value_Object >>{
+     }
+     class Exam_Result << (E,#FF7700) Entity >>{
+     }
+     class DashBoard << (E,#FF7700) Entity >>{
+     }
+     class Grammar << (V,#008B8B) Value_Object >>{
+     }
+     Exam "1" --> "1" Grammar : has
+     Exam "1" --> "1" Open_Date : has
+     Exam "1" --> "1" Close_Date : has
+     Exam "1" --> "1" Exam_Result : has
+     Exam_Result "*" --> "1" DashBoard : constitutes
+    }
+
+    package Post_It{
+     class Post_It << (E,#FF7700) Entity >>{
+     }
+     class Column << (V,#008B8B) Value_Object >> {
+     }
+     class Row<< (V,#008B8B) Value_Object >> {
+     }
+     class Content<< (V,#008B8B) Value_Object >> {
+     }
+     Post_It "1" --> "1" Content : has
+     Post_It "1" --> "1" Row : has
+     Post_It "1" --> "1" Column : has
+    }
+
+    package Class{
+     class Class << (E,#FF7700) Entity >>{
+     }
+     class Class_Title << (V,#008B8B) Unique_Value_Object >> {
+     }
+     class Class_Start_Date << (V,#008B8B) Value_Object >> {
+     }
+     class Class_Finish_Date << (V,#008B8B) Value_Object >> {
+     }
+     class Class_Start_Time << (V,#008B8B) Value_Object >> {
+     }
+     class Class_Finish_Time << (V,#008B8B) Value_Object >> {
+     }
+     class Class_Day_Of_Week << (V,#008B8B) Value_Object >> {
+     }
+     Class "1" --> "1" Class_Title : has
+     Class "1" --> "1" Class_Day_Of_Week : has
+     Class "1" --> "1" Class_Start_Date : has
+     Class "1" --> "1" Class_Finish_Date : has
+     Class "1" --> "1" Class_Start_Time : has
+     Class "1" --> "1" Class_Finish_Time : has
+    }
+
+    package Course {
+     class Course << (E,#FF7700) Entity >> {
+     }
+     class Minimum_Number_Of_Students<< (V,#008B8B) Value_Object >>{
+     }
+     class Maximum_Number_Of_Students<< (V,#008B8B) Value_Object >>{
+     }
+     class Small_Textual_Description<< (V,#008B8B) Value_Object >>{
+     }
+     class Course_ID<< (V,#008B8B) Unique_Value_Object >>{
+     }
+     class Course_Name<< (V,#008B8B) Value_Object >>{
+     }
+     Course "1" --> "1" Minimum_Number_Of_Students : has
+     Course "1" --> "1" Maximum_Number_Of_Students : has
+     Course "1" --> "1" Small_Textual_Description : has
+     Course "1" --> "1" Course_Name : has
+     Course "1" --> "1" Course_ID : has
+    }
+
+    package Invite{
+    class Invite << (E,#FF7700) Entity >> {
+    }
+    }
+
+    package Meeting{
+     class Meeting << (E,#FF7700) Entity >> {
+     }
+     class Meeting_Duration << (V,#008B8B) Value_Object >> {
+     }
+     class Meeting_Date << (V,#008B8B) Value_Object >> {
+     }
+     class Meeting_Time << (V,#008B8B) Value_Object >> {
+     }
+     class Meeting_ID << (V,#008B8B) Unique_Value_Object >> {
+     }
+     Meeting "1" --> "*" Invite : sends
+     Meeting "1" --> "1" Meeting_Duration : has
+     Meeting "1" --> "1" Meeting_Date : has
+     Meeting "1" --> "1" Meeting_Time : has
+     Meeting "1" --> "1" Meeting_ID : has
+    }
+
+    package Shared_Board{
+     class Shared_Board << (E,#FF7700) Entity >> {
+     }
+     class Number_of_Columns << (V,#008B8B) Value_Object >> {
+     }
+     class Number_of_Rows << (V,#008B8B) Value_Object >> {
+     }
+     class Shared_Board_Title << (V,#008B8B) Value_Object >> {
+     }
+     class Shared_Board_ID << (V,#008B8B) Value_Object >> {
+     }
+     class sharedBoardHistory<< (E,#FF7700) Entity >> {
+     }
+     Shared_Board "1" --> "1" Number_of_Columns : has
+     Shared_Board "1" --> "1" Number_of_Rows : has
+     Shared_Board "1" --> "1" Shared_Board_Title : has
+     Shared_Board "1" --> "1" Shared_Board_ID : has
+     Shared_Board "1" --> "1" sharedBoardHistory : has
+     }
+
+    package Person {
+     class Person << (E,#FF7700) Entity >> {
+     }
+     class Email << (V,#008B8B) Value_Object >> {
+     }
+     class Password << (V,#008B8B) Value_Object >> {
+     }
+     class Full_Name << (V,#008B8B) Value_Object >> {
+     }
+     class Short_Name << (V,#008B8B) Value_Object >> {
+     }
+     Person "1" --> "1" Email : has
+     Person "1" --> "1" Password : has
+     Person "1" --> "1" Full_Name : has
+     Person "1" --> "1" Short_Name : has
+    }
+
+    package Enrollment{
+     class Enrollment << (E,#FF7700) Entity >> {
+     }
+    }
+
+    package Teacher_Students {
+     class Date_of_Birth << (V,#FF7700) Value_Object >> {
+     }
+     class Tax_Payer_Number << (V,#FF7700) Value_Object >> {
+     }
+
+     package Student {
+      class Student << (E,#FF7700) Entity >> {}
+      class Mechanographic_Number << (V,#FF7700) Value_Object >> {}
+      Student "1" --> "1" Mechanographic_Number : has
+      Student "1" --> "1" Date_of_Birth : has
+      Student "1" --> "1" Tax_Payer_Number : has
+     }
+
+     package Teacher {
+      class Teacher << (E,#FF7700) Entity >> {}
+      class Acronym << (V,#FF7700) Value_Object >> {}
+      Teacher "1" --> "1" Acronym : has
+      Teacher "1" --> "1" Date_of_Birth : has
+      Teacher "1" --> "1" Tax_Payer_Number : has
+      Teacher "1" --> "*" DashBoard : checks
+      Teacher "1" --> "*" Exam : creates
+      Course "1" --> "*" Teacher : has
+      Teacher "1" --> "*" Class : Schedules
+      Teacher "1" --> "*" Extra_Class : Schedules
+     }
+    }
+
+    package Extra_Class{
+     class Extra_Class << (E,#FF7700) Entity >> {
+     }
+     class Extra_Class_Day<< (V,#008B8B) Value_Object >>{
+     }
+     class Extra_Class_Title<< (V,#008B8B) Value_Object >>{
+     }
+     class Extra_Class_Start_Time<< (V,#008B8B) Value_Object >>{
+     }
+     class Extra_Class_Finish_Time<< (V,#008B8B) Value_Object >>{
+     }
+     Extra_Class "1" --> "1" Extra_Class_Title : has
+     Extra_Class "1" --> "1" Extra_Class_Day : has
+     Extra_Class "1" --> "1" Extra_Class_Start_Time : has
+     Extra_Class "1" --> "1" Extra_Class_Finish_Time : has
+    }
+
+     Student "1" --> "*" DashBoard : checks
+     Student "1" --> "*" Exam : takes
+     Student "1" --> "*" Class : takes
+     Student "1" --> "*" Extra_Class : takes
+     Course "1" --> "*" Exam : has
+     Person "1" --> "*" Enrollment : requests
+     Person "1" --> "*" Meeting : schedules
+     Person "1" --> "1" Invite : accepts
+     Person "1" --> "*" Post_It : creates
+     Person "1" --> "*" Shared_Board : creates
+     Person "1" --> "*" Shared_Board : edits
+     Person "1" --> "1" sharedBoardHistory : checks
+     Person  <|-- Student
+     Person  <|-- Teacher
+
+    @enduml

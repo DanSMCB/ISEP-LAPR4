@@ -1,0 +1,26 @@
+    Add Question:
+    {
+        ID: 1,
+        Title: "Multiple Choice Question",
+        Question Type: "Multiple Choice",
+        Options: [
+            Option 1: "Option A",
+            Option 2: "Option B",
+            Option 3: "Option C"
+        ],
+        Answer: 2
+    }
+
+    Update Question:
+    {
+        ID: 1,
+        Title: "Multiple Choice Question (Updated)",
+        Question Type: "Multiple Choice",
+        Options: [
+            Option 1: "Option A",
+            Option 2: "Option B",
+            Option 3: "Option C",
+            Option 4: "Option D"
+        ],
+        Answer: 3
+    }

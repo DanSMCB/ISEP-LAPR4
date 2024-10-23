@@ -1,0 +1,23 @@
+package eapli.base.ANTLR.ExamValidation;
+
+import java.io.*;
+
+import eapli.base.ANTLR.ExamValidation.ExamBaseVisitor;
+import eapli.base.ANTLR.ExamValidation.ExamLexer;
+import eapli.base.ANTLR.ExamValidation.ExamParser;
+import eapli.base.ANTLR.ExamValidation.ExamVisitor;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
+
+public class Exam {
+    public static void main(String[] args) throws IOException {
+        FileInputStream fis = new FileInputStream(new File("teste.txt"));
+        ExamLexer lexer = new ExamLexer(new ANTLRInputStream(fis));
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        ExamParser parser = new ExamParser(tokens);
+        ParseTree tree = parser.prog(); // parse
+
+        ExamVisitor<?> visitor = new ExamBaseVisitor<>(); // Replace with your custom visitor
+        visitor.visit(tree);
+    }
+}

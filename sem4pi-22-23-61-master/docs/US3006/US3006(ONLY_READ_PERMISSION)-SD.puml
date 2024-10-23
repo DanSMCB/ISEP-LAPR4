@@ -1,0 +1,65 @@
+@startuml
+'http://plantuml.com/skinparam.html
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor SystemUser as Actor
+participant CreateBoardPostItUI as UI
+participant AuthzRegistry as AuthzRes
+participant AuthorizationService as AuthzSvc
+participant UserSession as UserS
+participant CreateBoardPostItController as Controller
+participant CreateBoardPostItService as Service
+participant SharedBoardRepository as Repo
+participant "theSharedBoard:SharedBoard" as SharedBoard
+participant PostIt as PostIt
+participant CreateBoardPostItThread as Thread
+participant Board as Board
+
+-> UI: Create Board post-it
+activate UI
+    UI -> AuthzRes : authz=authorizationService()
+    activate AuthzRes
+    deactivate AuthzRes
+    UI -> AuthzSvc : s=session()
+    activate AuthzSvc
+    deactivate AuthzSvc
+    UI -> UserS : myUser=authenticatedUser()
+    activate UserS
+    deactivate UserS
+
+    UI -> Controller: create(sharedBoardRepository)
+    activate Controller
+        Controller -> Service : create(sharedBoardRepository)
+        activate Service
+        deactivate Service
+    deactivate Controller
+    UI -> Controller : findBoardsBySystemUser(myUser)
+    activate Controller
+        Controller -> Service : findBoardsBySystemUser(myUser)
+        activate Service
+            Service -> Repo : findBoardsBySystemUser(myUser)
+            activate Repo
+            deactivate Repo
+        deactivate Service
+    deactivate Controller
+    UI --> Actor : ask user shared \nboard selection
+    Actor --> UI : select shared board
+
+    UI -> Controller : getBoardAccessType(theSharedBoard, myUser)
+    activate Controller
+        Controller -> Service : getBoardAccessType(sharedBoard, myUser)
+        activate Service
+            Service -> SharedBoard : getAccessType(systemUser)
+            activate SharedBoard
+            deactivate SharedBoard
+        deactivate Service
+    deactivate Controller
+
+    UI --> Actor : informs the user doesn't \n have write permissions
+
+deactivate UI
+@enduml

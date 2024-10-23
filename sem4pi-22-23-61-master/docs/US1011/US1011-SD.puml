@@ -1,0 +1,44 @@
+@startuml
+'skinparam settings
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor Teacher as Actor
+participant UpdateScheduleClassUI as UI
+participant UpdateScheduleClassController as Controller
+participant UpdateScheduleClassService as Service
+participant ClassRepository as Repo
+participant TeacherRepository as TeacherRepo
+
+UI -> Actor: Update the schedule of the class
+activate UI
+Actor -> UI: Provide requested data (id, newStartTime, newFinishTime)
+
+UI -> Controller: updateClassSchedule(id, newStartTime, newFinishTime)
+activate Controller
+Controller -> Service: checkClassSchedule(id, newStartTime, newFinishTime)
+activate Service
+Service -> Repo : findClassById(id)
+activate Repo
+deactivate Repo
+Service -> TeacherRepo : findTeacherByClassId(id)
+activate TeacherRepo
+deactivate TeacherRepo
+deactivate Service
+alt No schedule conflict
+Controller -> Repo : updateClassSchedule(id, newStartTime, newFinishTime)
+activate Repo
+deactivate Repo
+Controller -> UI : Show success message
+UI -> Actor : System types : "Class schedule has been updated"
+
+else Schedule conflict exists
+Controller -> UI : Show error message
+UI -> Actor : System types : "Conflict between class schedules"
+end
+deactivate Controller
+deactivate UI
+@enduml

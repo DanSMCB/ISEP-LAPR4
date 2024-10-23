@@ -1,0 +1,38 @@
+
+
+
+
+  @startuml
+    hide methods
+
+    package Enrollment{
+    class Enrollment << (E,#FF7700) Entity >> {
+    }
+    }
+
+
+
+
+    package Student {
+    class Date_of_Birth << (V,#FF7700) Value_Object >> {}
+          class Tax_Payer_Number << (V,#FF7700) Value_Object >> {}
+      class Student << (E,#FF7700) Entity >> {}
+      class Mechanographic_Number << (V,#FF7700) Value_Object >> {}
+      Student "1" -- "1" Mechanographic_Number
+      Student "1" -- "1" Date_of_Birth
+      Student "1" -- "1" Tax_Payer_Number
+    }
+
+
+
+
+
+
+
+
+
+    Student "1" -- "*" Enrollment : requests
+
+
+
+    @enduml

@@ -1,0 +1,28 @@
+@startuml
+
+class EnrollStudentsBulkUI{
+}
+
+class EnrollStudentsBulkController{
+}
+
+class Enrollment{
+}
+
+class CSVReader{
+}
+
+class Student {
+
+}
+
+class EnrollmentRepository{
+}
+
+EnrollStudentsBulkUI ..> EnrollStudentsBulkController
+EnrollStudentsBulkController ..>Enrollment
+EnrollStudentsBulkController ..> CSVReader
+EnrollStudentsBulkController ..> Student
+EnrollStudentsBulkController ..> StudentRepository
+Enrollment ..> EnrollmentRepository
+@enduml

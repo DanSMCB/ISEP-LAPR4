@@ -1,0 +1,23 @@
+@startuml US1008-SSD
+
+
+autonumber
+actor "Student" as STU
+
+
+activate STU
+STU -> ":System" : Asks to enroll in a course
+activate ":System"
+":System" --> STU : Shows a list of courses and asks to choose one
+deactivate ":System"
+STU -> ":System" : Chooses one course to enroll
+activate ":System"
+":System" --> STU : Asks for the required data
+deactivate ":System"
+STU -> ":System" : Inserts the required data(x,y,z)
+activate ":System"
+":System" --> STU : Confirms/Declines operation(x,y,z)
+deactivate ":System"
+
+
+@enduml

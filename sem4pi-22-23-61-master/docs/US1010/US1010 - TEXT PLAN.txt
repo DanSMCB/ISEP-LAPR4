@@ -1,0 +1,17 @@
+TEST PLAN #10 : SHEDULE NEW CLASS
+
+
+
+1 Prompt the user to enter the class ID.
+2 Prompt the user to enter the class title.
+3 Prompt the user to enter the start time of the class in "HH:mm" format.
+4 Prompt the user to enter the end time of the class in "HH:mm" format.
+5 Prompt the user to enter the start date of the class in "YYYY-MM-DD" format.
+6 Prompt the user to enter the end date of the class in "YYYY-MM-DD" format.
+7 Prompt the user to enter the day of the week for the class (1-7).
+8 Prompt the user to enter the acronym of the teacher responsible for the class.
+9 Check if there is a teacher with the provided acronym. Otherwise, display an error message.
+10 Check if there is any time conflict with another existing class. If so, display an error message. Otherwise, proceed to the next step.
+11 Schedule the class by calling the scheduleClass method of ClassController.
+12 Display a success message indicating that the class has been scheduled successfully.
+

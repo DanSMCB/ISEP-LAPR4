@@ -1,0 +1,14 @@
+-----------------
+BUSINESS RULES
+-----------------
+
+1. A class schedule has a unique class ID.
+2. A class schedule must have a class title.
+3. A class schedule must have a start time and an end time.
+4. A class schedule must have a start date and an end date.
+5. A class schedule must have a day of the week assigned.
+6. A class schedule must be assigned to a teacher.
+7. The teacher assigned to a class schedule must exist in the system.
+8. A class schedule cannot have overlapping time periods with existing scheduled classes.
+9. A class schedule can optionally have a description.
+10. The class ID of a class schedule must be unique among all scheduled classes.

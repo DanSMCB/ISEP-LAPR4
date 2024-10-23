@@ -1,0 +1,46 @@
+@startuml
+'skinparam settings
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor User as Actor
+participant ShareBoardUI as UI
+participant ShareBoardController as Controller
+participant ShareBoardService as Service
+participant SharedBoardRepository as Repo
+participant SystemUserRepository as UserRepo
+
+activate Actor
+Actor -> UI: wants to share a board
+activate UI
+Actor -> UI: Provide requested data (ownerUsername, userToShareUsername, accessType)
+
+UI -> Controller: shareBoard(ownerUsername, userToShareUsername, SharedBoard.AccessType.valueOf(accessType.toUpperCase()))
+activate Controller
+Controller -> Service: shareBoard(ownerUsername, userToShareUsername, accessType)
+activate Service
+Service -> UserRepo : findByUsername(ownerUsername)
+activate UserRepo
+deactivate UserRepo
+Service -> UserRepo : findByUsername(userToShareUsername)
+activate UserRepo
+deactivate UserRepo
+Service -> Repo: findSharedBoardsByOwner(owner)
+activate Repo
+deactivate Repo
+alt SharedBoard and users are found
+    Service -> Controller : shareBoard
+    Controller -> UI : Show success message
+    UI -> Actor : System types : "Shared board with user: " + userToShareUsername + " with " + accessType + " access."
+else Board not found or User not found
+    Controller -> UI : Show error message
+    UI -> Actor : System types : "Failed to share board: " + e.getMessage()
+end
+deactivate Service
+deactivate Controller
+deactivate UI
+deactivate Actor
+@enduml

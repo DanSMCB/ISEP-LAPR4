@@ -1,0 +1,14 @@
+
+
+
+TEST PLAN #10: Update Class Schedule
+
+1 Log in as teacher/teacherA1
+2 Select the option Class > Update Class Schedule
+3 List the available classes using the provided option
+4 Input the ID of the class you want to update
+5 Input the new class start time in the format HH:mm
+6 Input the new class finish time in the format HH:mm
+7 Input the new class start date in the format yyyy/mm/dd
+8 Input the new class finish date in the format yyyy/mm/dd
+9 Input the new class teacher

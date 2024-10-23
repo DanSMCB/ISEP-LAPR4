@@ -1,0 +1,56 @@
+@startuml
+'http://plantuml.com/skinparam.html
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor Teacher as Actor
+participant ListCourseExamsUI as UI
+participant ListCourseExamsController as Controller
+participant ListCourseExamsService as Service
+participant CourseRepository as CourseRepo
+participant ExamRepository as Repo
+
+-> UI: Show course exams
+activate UI
+    UI -> Controller: create(authz, examRepository, courseRepository)
+    activate Controller
+        Controller -> Service : create(authz, examRepository, courseRepository)
+        activate Service
+        deactivate Service
+    deactivate Controller
+    UI -> Controller : listCourses()
+    activate Controller
+        Controller -> Service : courses()
+        activate Service
+            Service -> CourseRepo : findAll()
+            activate CourseRepo
+            CourseRepo --> Service : courses
+            deactivate CourseRepo
+            Service --> Controller : courses
+        deactivate Service
+        Controller --> UI : courses
+    deactivate Controller
+
+    UI --> Actor : show courses
+
+    Actor -> UI : selects course
+
+    UI -> Controller : listCourseExams(course)
+    activate Controller
+        Controller -> Service : courseExams(course)
+        activate Service
+            Service -> Repo : findByCourse(course)
+            activate Repo
+                Repo --> Service : exams
+            deactivate Repo
+            Service --> Controller : exams
+        deactivate Service
+        Controller --> UI : exams
+    deactivate Controller
+
+    UI-->Actor: lists exams
+deactivate UI
+@enduml

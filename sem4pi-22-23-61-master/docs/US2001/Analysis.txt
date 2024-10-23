@@ -1,0 +1,25 @@
+Title: Create / Update Exam
+
+
+Description:
+As Teacher, I want to create/update an exam
+
+
+Acceptance Criteria:
+1. The system should allow the teacher to provide the exam title.
+2. The system should allow the teacher to specify the start and end date and time of the exam.
+3. The system should allow the teacher to associate the exam with an existing course.
+4. The system should save the created exam.
+5. The system should display a confirmation message after successful creation of the exam.
+
+
+Analysis:
+The User Story US2001 describes the functionality to create exams in the system. Teachers have the ability to create and edit exams by providing information such as the exam title, start date, end date, and associating the exam with a specific course. This information is essential for scheduling and organizing exams.
+
+The implementation of this User Story would involve creating a user interface (UI) that allows teachers to enter exam details such as title, date, and time. Additionally, it would be necessary to integrate the functionality to associate the exam with an existing course, possibly by presenting a list of available courses for selection.
+
+Internally, the system would require a controller layer, such as the 'CreateExamController', which would be responsible for receiving the data provided by the UI and executing the necessary business logic. This would include creating an 'Exam' object based on the provided data and calling the appropriate repository, such as the 'ExamRepository', to save the exam.
+
+The US2001 User Story enables teachers to efficiently create exams, properly schedule them, and associate them with the appropriate courses. This functionality is crucial for effective exam management and contributes to the organization and efficiency of the assessment process in educational institutions.
+
+This analysis provides an overview of the US2001 User Story and can serve as a basis for planning and implementing this functionality within the system.

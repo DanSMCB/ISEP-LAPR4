@@ -1,0 +1,48 @@
+@startuml US1007-SD
+autonumber
+actor  "Student" as STUD
+
+participant ":StudentEnrollmentUI" as UI
+participant ":StudentEnrollmentController" as CTRL
+participant ":StudentEnrollmentFactory" as FACT
+participant "StudentEnrollment" as ENRO
+participant "TrasactionalContext" as CONT
+participant "StudentEnrollmentRepository" as REPO
+
+
+activate STUD
+STUD -> UI : asks to enroll in a course
+activate UI
+
+UI --> STUD : show list of courses and asks to choose one
+deactivate UI
+STUD --> UI : chooses one course to enroll
+activate UI
+UI --> STUD : asks for the required data(x,y,z)
+deactivate UI
+STUD --> UI : inserts the required data(x,y,z)
+create CTRL
+activate UI
+UI --> CTRL : initializes controller
+UI --> CTRL : creates enrollment(x,y,z)
+deactivate UI
+activate CTRL
+CTRL --> FACT : creates enrollment(x,y,z)
+deactivate CTRL
+activate FACT
+create ENRO
+FACT --> ENRO : creates
+deactivate FACT
+CTRL --> CONT : begin
+activate CTRL
+activate CONT
+CTRL --> CONT : save
+CTRL --> REPO : save
+activate REPO
+deactivate REPO
+CTRL --> CONT : commit
+deactivate CONT
+deactivate CTRL
+
+
+@enduml

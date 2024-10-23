@@ -1,0 +1,21 @@
+@startuml US1009-SSD
+
+autonumber
+actor "Manager" as MAN
+
+
+activate MAN
+MAN -> ":System" : Asks to approve/reject students' applications to courses
+activate ":System"
+":System" --> MAN : Shows a list of students' applications and asks Manager to choose one
+deactivate ":System"
+MAN -> ":System" : chooses one application
+activate ":System"
+":System" --> MAN : Asks to accept/reject the application
+deactivate ":System"
+MAN -> ":System" : accepts/declines the chosen application
+activate ":System"
+":System" --> MAN : Confirms operation
+deactivate ":System"
+
+@enduml

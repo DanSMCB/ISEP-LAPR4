@@ -1,0 +1,81 @@
+@startuml
+'http://plantuml.com/skinparam.html
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor SystemUser as Actor
+participant UpdateBoardPostItUI as UI
+participant AuthzRegistry as AuthzRes
+participant AuthorizationService as AuthzSvc
+participant UserSession as UserS
+participant UpdateBoardPostItController as Controller
+participant UpdateBoardPostItService as Service
+participant SharedBoardRepository as Repo
+participant "theSharedBoard:SharedBoard" as SharedBoard
+participant PostIt as PostIt
+participant MoveBoardPostItThread as Thread
+participant Board as Board
+
+-> UI: Move a post-it in a board
+activate UI
+    UI -> AuthzRes : authz=authorizationService()
+    activate AuthzRes
+    deactivate AuthzRes
+    UI -> AuthzSvc : s=session()
+    activate AuthzSvc
+    deactivate AuthzSvc
+    UI -> UserS : myUser=authenticatedUser()
+    activate UserS
+    deactivate UserS
+
+    UI -> Controller: create(sharedBoardRepository)
+    activate Controller
+        Controller -> Service : create(sharedBoardRepository)
+        activate Service
+        deactivate Service
+    deactivate Controller
+    UI -> Controller : findBoardsBySystemUser(myUser)
+    activate Controller
+        Controller -> Service : findBoardsBySystemUser(myUser)
+        activate Service
+            Service -> Repo : findBoardsBySystemUser(myUser)
+            activate Repo
+            deactivate Repo
+        deactivate Service
+    deactivate Controller
+    UI --> Actor : ask user shared \nboard selection
+    Actor --> UI : select shared board
+
+    UI -> Controller : getBoardAccessType(theSharedBoard, myUser)
+    activate Controller
+        Controller -> Service : getBoardAccessType(sharedBoard, myUser)
+        activate Service
+            Service -> SharedBoard : getAccessType(systemUser)
+            activate SharedBoard
+            deactivate SharedBoard
+        deactivate Service
+    deactivate Controller
+    UI --> Actor : ask row, column, new row and\nnew column to move the post-it
+    Actor --> UI : row, column, new row, new column
+
+    UI -> Controller : movePostIt(theSharedBoard, row, column, newRow, newColumn, myUser)
+    activate Controller
+        Controller -> Service : movePostIt(theSharedBoard, row, column, newRow, newColumn, myUser)
+        activate Service
+            Service -> Thread : create(theSharedBoard.getBoard(), row, column, newRow, newColumn, myUser)
+            activate Thread
+            deactivate Thread
+            Service -> Thread : start()
+            activate Thread
+                Thread -> Board : moveCell(row, column, newRow, newColumn, myUser)
+                activate Board
+                deactivate Board
+            deactivate Thread
+        deactivate Service
+    deactivate Controller
+
+deactivate UI
+@enduml

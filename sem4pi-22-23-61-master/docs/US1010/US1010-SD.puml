@@ -1,0 +1,58 @@
+@startuml
+'skinparam settings
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor Teacher as Actor
+participant UpdateClassUI as UI
+participant ScheduleClassController as Controller
+participant ClassRepository as Repo
+
+UI -> Actor: Request data (e.g., ID, title, start time, finish time, start date, finish date, day of the week)
+activate UI
+Actor -> UI: Provide requested data
+
+UI -> Controller: scheduleClass( id, title,startTime,  finishTime, start_date,  finishDate,  day, teacherAcronym)
+activate Controller
+Controller -> Service: scheduleClass(Classe classe)
+activate Service
+Service -> Repo : findAll()
+activate Repo
+deactivate Repo
+Service -> TeacherRepo : findTeacherByAcronym()
+activate TeacherRepo
+deactivate TeacherRepo
+deactivate Service
+alt Does not have conflict
+Controller -> Controller : checkClassConflict()
+Controller -> Controller : isTimeOverlapUserInput()
+Controller -> Repo : save(Classe classe)
+activate Repo
+deactivate Repo
+Controller -> UI :
+deactivate Controller
+
+UI -> Actor : System types : "Class has been scheduled"
+
+else Has conflict
+
+UI -> Actor : System types : "Conflict between Classes"
+
+end
+
+
+
+activate TeacherRepo
+
+deactivate TeacherRepo
+
+deactivate Service
+
+deactivate Controller
+
+
+deactivate UI
+@enduml

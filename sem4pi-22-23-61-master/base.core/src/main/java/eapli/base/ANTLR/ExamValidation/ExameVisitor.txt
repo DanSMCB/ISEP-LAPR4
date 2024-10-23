@@ -1,0 +1,109 @@
+// Generated from C:/Users/mike_/OneDrive/Documentos/sem4pi-22-23-61/base.core/src/main/java/eapli/base/ANTLR/ExamValidation\Exame.g4 by ANTLR 4.12.0
+package eapli.base.ANTLR.ExamValidation;
+import org.antlr.v4.runtime.tree.ParseTreeVisitor;
+
+/**
+ * This interface defines a complete generic visitor for a parse tree produced
+ * by {@link ExameParser}.
+ *
+ * @param <T> The return type of the visit operation. Use {@link Void} for
+ * operations with no return type.
+ */
+public interface ExameVisitor<T> extends ParseTreeVisitor<T> {
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#prog}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitProg(ExameParser.ProgContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#exame}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExame(ExameParser.ExameContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#corpo_exame}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCorpo_exame(ExameParser.Corpo_exameContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#seccao}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSeccao(ExameParser.SeccaoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#pergunta}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPergunta(ExameParser.PerguntaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#corpo}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCorpo(ExameParser.CorpoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#verdadeiro_falso}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVerdadeiro_falso(ExameParser.Verdadeiro_falsoContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#palavras_em_falta}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPalavras_em_falta(ExameParser.Palavras_em_faltaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#resposta_falta}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitResposta_falta(ExameParser.Resposta_faltaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#numerica}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumerica(ExameParser.NumericaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#resposta_curta}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitResposta_curta(ExameParser.Resposta_curtaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#escolha_multipla}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEscolha_multipla(ExameParser.Escolha_multiplaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#opcao_escolha_multipla}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOpcao_escolha_multipla(ExameParser.Opcao_escolha_multiplaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#correspondencia}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCorrespondencia(ExameParser.CorrespondenciaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#token_correspondencia}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitToken_correspondencia(ExameParser.Token_correspondenciaContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link ExameParser#respostas_correspondencia}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRespostas_correspondencia(ExameParser.Respostas_correspondenciaContext ctx);
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+  <persistence-unit name="eapli.base">
+    <!--
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    -->
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+    <class>eapli.framework.infrastructure.authz.domain.model.SystemUser</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.Role</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.RoleSet</class>
+    <class>eapli.framework.infrastructure.authz.domain.model.RoleAssignment</class>
+    <class>eapli.base.clientusermanagement.domain.ClientUser</class>
+    <class>eapli.base.clientusermanagement.domain.SignupRequest</class>
+    <class>eapli.base.Application</class>
+    <class>eapli.framework.infrastructure.authz.domain.repositories.UserRepository</class>
+    <class>eapli.base.core.systemUserManagement.SystemUserRepository</class>
+    <class>eapli.base.AppSettings</class>
+    <class>eapli.base.infrastructure.authz.AuthenticationCredentialHandler</class>
+    <class>eapli.base.infrastructure.authz.CredentialHandler</class>
+    <class>eapli.base.Classe.domain.Classe</class>
+    <class>eapli.base.Course.Domain.Course</class>
+    <class>eapli.base.Enrollment.Domain.Enrollment</class>
+    <class>eapli.base.ExtraClasse.domain.ExtraClasse</class>
+    <class>eapli.base.exammanagement.domain.Exam</class>
+    <class>eapli.base.Manager.Manager</class>
+    <class>eapli.base.meetingmanagement.domain.Invite</class>
+    <class>eapli.base.meetingmanagement.domain.Meeting</class>
+    <class>eapli.base.SharedBoard.domain.SharedBoard</class>
+    <class>eapli.base.SharedBoard.repository.SharedBoardRepository</class>
+    <class>eapli.base.Student_Teacher.Student.domain.Student</class>
+    <class>eapli.base.Student_Teacher.Teacher.Domain.Teacher</class>
+    <class>eapli.base.Student_Teacher.Teacher.Repository.TeacherRepository</class>
+    <class>eapli.base.usermanagement.domain.BaseRoles</class>
+
+
+
+    <properties>
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/base"/>-->
+      <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://vsgate-s2.dei.isep.ipp.pt:10751/base;MV_STORE=FALSE;AUTO_SERVER=true;"/>
+
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.password" value="eapli"/>
+      <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+      <!-- <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/> -->
+      <!-- <property name="eclipselink.logging.level" value="FINE"/> -->
+      <!-- <property name = "hibernate.show_sql" value = "true" /> -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+    </properties>
+  </persistence-unit>
+</persistence>

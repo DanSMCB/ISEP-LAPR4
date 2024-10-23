@@ -1,0 +1,26 @@
+@startuml
+
+class Meeting{
+meetingTime
+title
+meetingDuration
+meetingDate
+List<SystemUser>
+MeetingStatus
+}
+
+
+class SystemUser{
+version
+Username
+Password
+Name
+EmailAddress
+}
+class Administrator{}
+
+
+Administrator "1" -->  "*" Meeting : Cancels
+Administrator "1" --> "1" SystemUser : is a
+
+@enduml

@@ -1,0 +1,66 @@
+@startuml
+skinparam handwritten true
+class SystemUser {
+}
+
+class SharedBoardArchiveUI {
+  +archiveBoard(title: string, currentUser: User)
+  +displayMessage(message: string)
+}
+
+class AuthzRegistry {
+  +authorizationService(): AuthorizationService
+}
+
+class AuthorizationService {
+  +session(): UserSession
+}
+
+class UserSession {
+  +authenticatedUser(): User
+}
+
+class SharedBoardArchiveController {
+  +archiveBoard(title: string, currentUser: User)
+}
+
+class SharedBoardArchiveService {
+  +archiveBoard(title: string, currentUser: User)
+}
+
+class SharedBoardRepository {
+  +findByBoardId(title: string): SharedBoard
+  +save(board: SharedBoard)
+}
+
+class SharedBoard {
+  -isArchived: boolean
+  +setIsArchived(isArchived: boolean)
+  +updateAccessTypeForSharedUsers()
+}
+
+class User {
+}
+
+SystemUser --> SharedBoardArchiveUI
+SharedBoardArchiveUI --> AuthzRegistry
+SharedBoardArchiveUI --> AuthorizationService
+SharedBoardArchiveUI --> UserSession
+SharedBoardArchiveUI --> SharedBoardArchiveController
+SharedBoardArchiveUI --> SystemUser
+
+AuthzRegistry --> AuthorizationService
+
+AuthorizationService --> UserSession
+
+SharedBoardArchiveController --> SharedBoardArchiveService
+
+SharedBoardArchiveService --> SharedBoardRepository
+
+SharedBoardArchiveController --> SharedBoard
+SharedBoardArchiveService --> SharedBoard
+SharedBoard --> SharedBoardRepository
+
+UserSession --> User
+
+@enduml

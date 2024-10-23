@@ -1,0 +1,1460 @@
+// Generated from C:/Users/mike_/OneDrive/Documentos/sem4pi-22-23-61/base.core/src/main/java/eapli/base/ANTLR/ExamValidation\Exame.g4 by ANTLR 4.12.0
+package eapli.base.ANTLR.ExamValidation;
+import org.antlr.v4.runtime.atn.*;
+import org.antlr.v4.runtime.dfa.DFA;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
+import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
+
+
+public class ExameParser extends Parser {
+	static { RuntimeMetaData.checkVersion("4.12.0", RuntimeMetaData.VERSION); }
+
+	protected static final DFA[] _decisionToDFA;
+	protected static final PredictionContextCache _sharedContextCache =
+		new PredictionContextCache();
+	public static final int
+		DOISPONTOS=1, ABRECHAVETA=2, FECHACHAVETA=3, ABREPARANTESIS=4, FECHAPARANTESIS=5, 
+		VIRGULA=6, TESTE=7, ID=8, TRACO=9, RESPOSTA=10, TITULO=11, DATAABERTURA=12, 
+		DATAFECHO=13, OPCOES=14, OPCAO=15, ENUNCIADO=16, TABELA_A=17, TABELA_B=18, 
+		COTACAO=19, DIFICULDADE=20, DESCRICAO_TEXTUAL=21, PERGUNTAS=22, LIMITE_PERGUNTAS=23, 
+		SECCAO=24, PERGUNTA=25, TIPO_PERGUNTA=26, NUMERICA=27, ESCOLHA_MULTIPLA=28, 
+		CORRESPONDENCIA=29, VERDADEIROOUFALSO=30, PALAVRAS_EM_FALTA=31, RESPOSTA_CURTA=32, 
+		VERDADEIRO=33, FALSO=34, TIPO=35, INT=36, DATA=37, WS=38, CARACTERE_ESPECIAL=39, 
+		NUMERO=40, FRASE=41, STRING=42, ESPACO=43;
+	public static final int
+		RULE_prog = 0, RULE_exame = 1, RULE_corpo_exame = 2, RULE_seccao = 3, 
+		RULE_pergunta = 4, RULE_corpo = 5, RULE_verdadeiro_falso = 6, RULE_palavras_em_falta = 7, 
+		RULE_resposta_falta = 8, RULE_numerica = 9, RULE_resposta_curta = 10, 
+		RULE_escolha_multipla = 11, RULE_opcao_escolha_multipla = 12, RULE_correspondencia = 13, 
+		RULE_token_correspondencia = 14, RULE_respostas_correspondencia = 15;
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"prog", "exame", "corpo_exame", "seccao", "pergunta", "corpo", "verdadeiro_falso", 
+			"palavras_em_falta", "resposta_falta", "numerica", "resposta_curta", 
+			"escolha_multipla", "opcao_escolha_multipla", "correspondencia", "token_correspondencia", 
+			"respostas_correspondencia"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
+
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "':'", "'{'", "'}'", "'['", "']'", "','", "'Teste'", "'ID'", "'-'", 
+			"'Resposta'", "'Titulo'", "'DataAbertura'", "'DataFecho'", "'Opcoes'", 
+			"'Opcao'", "'Enunciado'", "'TabelaA'", "'TabelaB'", "'Cotacao'", "'Dificuldade'", 
+			"'DescricaoTextual'", "'Perguntas'", "'LimitePerguntas'", "'Seccao'", 
+			"'Pergunta'", "'TipoPergunta'", "'Numerica'", "'EscolhaMultipla'", "'Correspondencia'", 
+			"'VerdadeiroOuFalso'", "'PalavrasEmFalta'", "'RespostaCurta'", "'Verdadeiro'", 
+			"'Falso'", "'Tipo'"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, "DOISPONTOS", "ABRECHAVETA", "FECHACHAVETA", "ABREPARANTESIS", 
+			"FECHAPARANTESIS", "VIRGULA", "TESTE", "ID", "TRACO", "RESPOSTA", "TITULO", 
+			"DATAABERTURA", "DATAFECHO", "OPCOES", "OPCAO", "ENUNCIADO", "TABELA_A", 
+			"TABELA_B", "COTACAO", "DIFICULDADE", "DESCRICAO_TEXTUAL", "PERGUNTAS", 
+			"LIMITE_PERGUNTAS", "SECCAO", "PERGUNTA", "TIPO_PERGUNTA", "NUMERICA", 
+			"ESCOLHA_MULTIPLA", "CORRESPONDENCIA", "VERDADEIROOUFALSO", "PALAVRAS_EM_FALTA", 
+			"RESPOSTA_CURTA", "VERDADEIRO", "FALSO", "TIPO", "INT", "DATA", "WS", 
+			"CARACTERE_ESPECIAL", "NUMERO", "FRASE", "STRING", "ESPACO"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
+	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
+
+	/**
+	 * @deprecated Use {@link #VOCABULARY} instead.
+	 */
+	@Deprecated
+	public static final String[] tokenNames;
+	static {
+		tokenNames = new String[_SYMBOLIC_NAMES.length];
+		for (int i = 0; i < tokenNames.length; i++) {
+			tokenNames[i] = VOCABULARY.getLiteralName(i);
+			if (tokenNames[i] == null) {
+				tokenNames[i] = VOCABULARY.getSymbolicName(i);
+			}
+
+			if (tokenNames[i] == null) {
+				tokenNames[i] = "<INVALID>";
+			}
+		}
+	}
+
+	@Override
+	@Deprecated
+	public String[] getTokenNames() {
+		return tokenNames;
+	}
+
+	@Override
+
+	public Vocabulary getVocabulary() {
+		return VOCABULARY;
+	}
+
+	@Override
+	public String getGrammarFileName() { return "Exame.g4"; }
+
+	@Override
+	public String[] getRuleNames() { return ruleNames; }
+
+	@Override
+	public String getSerializedATN() { return _serializedATN; }
+
+	@Override
+	public ATN getATN() { return _ATN; }
+
+	public ExameParser(TokenStream input) {
+		super(input);
+		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class ProgContext extends ParserRuleContext {
+		public ExameContext exame() {
+			return getRuleContext(ExameContext.class,0);
+		}
+		public ProgContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_prog; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterProg(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitProg(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitProg(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ProgContext prog() throws RecognitionException {
+		ProgContext _localctx = new ProgContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_prog);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(32);
+			exame();
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class ExameContext extends ParserRuleContext {
+		public TerminalNode TESTE() { return getToken(ExameParser.TESTE, 0); }
+		public TerminalNode DOISPONTOS() { return getToken(ExameParser.DOISPONTOS, 0); }
+		public TerminalNode ABRECHAVETA() { return getToken(ExameParser.ABRECHAVETA, 0); }
+		public Corpo_exameContext corpo_exame() {
+			return getRuleContext(Corpo_exameContext.class,0);
+		}
+		public TerminalNode FECHACHAVETA() { return getToken(ExameParser.FECHACHAVETA, 0); }
+		public ExameContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_exame; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterExame(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitExame(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitExame(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final ExameContext exame() throws RecognitionException {
+		ExameContext _localctx = new ExameContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_exame);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(34);
+			match(TESTE);
+			setState(35);
+			match(DOISPONTOS);
+			setState(36);
+			match(ABRECHAVETA);
+			setState(37);
+			corpo_exame();
+			setState(38);
+			match(FECHACHAVETA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Corpo_exameContext extends ParserRuleContext {
+		public Token id_exame;
+		public Token titulo_exame;
+		public Token data_abertura;
+		public Token data_fecho;
+		public TerminalNode ID() { return getToken(ExameParser.ID, 0); }
+		public List<TerminalNode> DOISPONTOS() { return getTokens(ExameParser.DOISPONTOS); }
+		public TerminalNode DOISPONTOS(int i) {
+			return getToken(ExameParser.DOISPONTOS, i);
+		}
+		public TerminalNode VIRGULA() { return getToken(ExameParser.VIRGULA, 0); }
+		public TerminalNode TITULO() { return getToken(ExameParser.TITULO, 0); }
+		public TerminalNode DATAABERTURA() { return getToken(ExameParser.DATAABERTURA, 0); }
+		public TerminalNode DATAFECHO() { return getToken(ExameParser.DATAFECHO, 0); }
+		public TerminalNode INT() { return getToken(ExameParser.INT, 0); }
+		public TerminalNode FRASE() { return getToken(ExameParser.FRASE, 0); }
+		public List<TerminalNode> DATA() { return getTokens(ExameParser.DATA); }
+		public TerminalNode DATA(int i) {
+			return getToken(ExameParser.DATA, i);
+		}
+		public List<SeccaoContext> seccao() {
+			return getRuleContexts(SeccaoContext.class);
+		}
+		public SeccaoContext seccao(int i) {
+			return getRuleContext(SeccaoContext.class,i);
+		}
+		public Corpo_exameContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_corpo_exame; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterCorpo_exame(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitCorpo_exame(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitCorpo_exame(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Corpo_exameContext corpo_exame() throws RecognitionException {
+		Corpo_exameContext _localctx = new Corpo_exameContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_corpo_exame);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(40);
+			match(ID);
+			setState(41);
+			match(DOISPONTOS);
+			setState(42);
+			((Corpo_exameContext)_localctx).id_exame = match(INT);
+			setState(43);
+			match(VIRGULA);
+			setState(44);
+			match(TITULO);
+			setState(45);
+			match(DOISPONTOS);
+			setState(46);
+			((Corpo_exameContext)_localctx).titulo_exame = match(FRASE);
+			setState(48); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(47);
+				seccao();
+				}
+				}
+				setState(50); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==SECCAO );
+			setState(52);
+			match(DATAABERTURA);
+			setState(53);
+			match(DOISPONTOS);
+			setState(54);
+			((Corpo_exameContext)_localctx).data_abertura = match(DATA);
+			setState(55);
+			match(DATAFECHO);
+			setState(56);
+			match(DOISPONTOS);
+			setState(57);
+			((Corpo_exameContext)_localctx).data_fecho = match(DATA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class SeccaoContext extends ParserRuleContext {
+		public Token id_seccao;
+		public Token desc_seccao;
+		public Token dificuldade_seccao;
+		public Token limite;
+		public TerminalNode SECCAO() { return getToken(ExameParser.SECCAO, 0); }
+		public TerminalNode ID() { return getToken(ExameParser.ID, 0); }
+		public List<TerminalNode> DOISPONTOS() { return getTokens(ExameParser.DOISPONTOS); }
+		public TerminalNode DOISPONTOS(int i) {
+			return getToken(ExameParser.DOISPONTOS, i);
+		}
+		public TerminalNode VIRGULA() { return getToken(ExameParser.VIRGULA, 0); }
+		public TerminalNode ABRECHAVETA() { return getToken(ExameParser.ABRECHAVETA, 0); }
+		public TerminalNode DESCRICAO_TEXTUAL() { return getToken(ExameParser.DESCRICAO_TEXTUAL, 0); }
+		public TerminalNode DIFICULDADE() { return getToken(ExameParser.DIFICULDADE, 0); }
+		public TerminalNode LIMITE_PERGUNTAS() { return getToken(ExameParser.LIMITE_PERGUNTAS, 0); }
+		public TerminalNode PERGUNTAS() { return getToken(ExameParser.PERGUNTAS, 0); }
+		public TerminalNode FECHACHAVETA() { return getToken(ExameParser.FECHACHAVETA, 0); }
+		public List<TerminalNode> INT() { return getTokens(ExameParser.INT); }
+		public TerminalNode INT(int i) {
+			return getToken(ExameParser.INT, i);
+		}
+		public TerminalNode FRASE() { return getToken(ExameParser.FRASE, 0); }
+		public List<PerguntaContext> pergunta() {
+			return getRuleContexts(PerguntaContext.class);
+		}
+		public PerguntaContext pergunta(int i) {
+			return getRuleContext(PerguntaContext.class,i);
+		}
+		public SeccaoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_seccao; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterSeccao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitSeccao(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitSeccao(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final SeccaoContext seccao() throws RecognitionException {
+		SeccaoContext _localctx = new SeccaoContext(_ctx, getState());
+		enterRule(_localctx, 6, RULE_seccao);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(59);
+			match(SECCAO);
+			setState(60);
+			match(ID);
+			setState(61);
+			match(DOISPONTOS);
+			setState(62);
+			((SeccaoContext)_localctx).id_seccao = match(INT);
+			setState(63);
+			match(VIRGULA);
+			setState(64);
+			match(ABRECHAVETA);
+			setState(65);
+			match(DESCRICAO_TEXTUAL);
+			setState(66);
+			match(DOISPONTOS);
+			setState(67);
+			((SeccaoContext)_localctx).desc_seccao = match(FRASE);
+			setState(68);
+			match(DIFICULDADE);
+			setState(69);
+			match(DOISPONTOS);
+			setState(70);
+			((SeccaoContext)_localctx).dificuldade_seccao = match(INT);
+			setState(71);
+			match(LIMITE_PERGUNTAS);
+			setState(72);
+			match(DOISPONTOS);
+			setState(73);
+			((SeccaoContext)_localctx).limite = match(INT);
+			setState(74);
+			match(PERGUNTAS);
+			setState(75);
+			match(DOISPONTOS);
+			setState(77); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(76);
+				pergunta();
+				}
+				}
+				setState(79); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==PERGUNTA );
+			setState(81);
+			match(FECHACHAVETA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class PerguntaContext extends ParserRuleContext {
+		public Token id_pergunta;
+		public Token enunciado_pergunta;
+		public Token tipo_pergunta;
+		public Token cotacao_pergunta;
+		public Token dificuldade_pergunta;
+		public TerminalNode PERGUNTA() { return getToken(ExameParser.PERGUNTA, 0); }
+		public TerminalNode ID() { return getToken(ExameParser.ID, 0); }
+		public List<TerminalNode> DOISPONTOS() { return getTokens(ExameParser.DOISPONTOS); }
+		public TerminalNode DOISPONTOS(int i) {
+			return getToken(ExameParser.DOISPONTOS, i);
+		}
+		public TerminalNode VIRGULA() { return getToken(ExameParser.VIRGULA, 0); }
+		public TerminalNode ENUNCIADO() { return getToken(ExameParser.ENUNCIADO, 0); }
+		public CorpoContext corpo() {
+			return getRuleContext(CorpoContext.class,0);
+		}
+		public TerminalNode COTACAO() { return getToken(ExameParser.COTACAO, 0); }
+		public TerminalNode DIFICULDADE() { return getToken(ExameParser.DIFICULDADE, 0); }
+		public List<TerminalNode> INT() { return getTokens(ExameParser.INT); }
+		public TerminalNode INT(int i) {
+			return getToken(ExameParser.INT, i);
+		}
+		public TerminalNode FRASE() { return getToken(ExameParser.FRASE, 0); }
+		public TerminalNode TIPO_PERGUNTA() { return getToken(ExameParser.TIPO_PERGUNTA, 0); }
+		public PerguntaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_pergunta; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterPergunta(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitPergunta(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitPergunta(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final PerguntaContext pergunta() throws RecognitionException {
+		PerguntaContext _localctx = new PerguntaContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_pergunta);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(83);
+			match(PERGUNTA);
+			setState(84);
+			match(ID);
+			setState(85);
+			match(DOISPONTOS);
+			setState(86);
+			((PerguntaContext)_localctx).id_pergunta = match(INT);
+			setState(87);
+			match(VIRGULA);
+			setState(88);
+			match(ENUNCIADO);
+			setState(89);
+			match(DOISPONTOS);
+			setState(90);
+			((PerguntaContext)_localctx).enunciado_pergunta = match(FRASE);
+			setState(91);
+			((PerguntaContext)_localctx).tipo_pergunta = match(TIPO_PERGUNTA);
+			setState(92);
+			match(DOISPONTOS);
+			setState(93);
+			corpo();
+			setState(94);
+			match(COTACAO);
+			setState(95);
+			match(DOISPONTOS);
+			setState(96);
+			((PerguntaContext)_localctx).cotacao_pergunta = match(INT);
+			setState(97);
+			match(DIFICULDADE);
+			setState(98);
+			match(DOISPONTOS);
+			setState(99);
+			((PerguntaContext)_localctx).dificuldade_pergunta = match(INT);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class CorpoContext extends ParserRuleContext {
+		public CorrespondenciaContext correspondencia() {
+			return getRuleContext(CorrespondenciaContext.class,0);
+		}
+		public Escolha_multiplaContext escolha_multipla() {
+			return getRuleContext(Escolha_multiplaContext.class,0);
+		}
+		public Resposta_curtaContext resposta_curta() {
+			return getRuleContext(Resposta_curtaContext.class,0);
+		}
+		public NumericaContext numerica() {
+			return getRuleContext(NumericaContext.class,0);
+		}
+		public Palavras_em_faltaContext palavras_em_falta() {
+			return getRuleContext(Palavras_em_faltaContext.class,0);
+		}
+		public Verdadeiro_falsoContext verdadeiro_falso() {
+			return getRuleContext(Verdadeiro_falsoContext.class,0);
+		}
+		public CorpoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_corpo; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterCorpo(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitCorpo(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitCorpo(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final CorpoContext corpo() throws RecognitionException {
+		CorpoContext _localctx = new CorpoContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_corpo);
+		try {
+			setState(107);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case CORRESPONDENCIA:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(101);
+				correspondencia();
+				}
+				break;
+			case ESCOLHA_MULTIPLA:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(102);
+				escolha_multipla();
+				}
+				break;
+			case RESPOSTA_CURTA:
+				enterOuterAlt(_localctx, 3);
+				{
+				setState(103);
+				resposta_curta();
+				}
+				break;
+			case NUMERICA:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(104);
+				numerica();
+				}
+				break;
+			case PALAVRAS_EM_FALTA:
+				enterOuterAlt(_localctx, 5);
+				{
+				setState(105);
+				palavras_em_falta();
+				}
+				break;
+			case VERDADEIROOUFALSO:
+				enterOuterAlt(_localctx, 6);
+				{
+				setState(106);
+				verdadeiro_falso();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Verdadeiro_falsoContext extends ParserRuleContext {
+		public Token resposta_verdOuFal;
+		public TerminalNode VERDADEIROOUFALSO() { return getToken(ExameParser.VERDADEIROOUFALSO, 0); }
+		public TerminalNode RESPOSTA() { return getToken(ExameParser.RESPOSTA, 0); }
+		public TerminalNode DOISPONTOS() { return getToken(ExameParser.DOISPONTOS, 0); }
+		public TerminalNode VERDADEIRO() { return getToken(ExameParser.VERDADEIRO, 0); }
+		public TerminalNode FALSO() { return getToken(ExameParser.FALSO, 0); }
+		public Verdadeiro_falsoContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_verdadeiro_falso; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterVerdadeiro_falso(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitVerdadeiro_falso(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitVerdadeiro_falso(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Verdadeiro_falsoContext verdadeiro_falso() throws RecognitionException {
+		Verdadeiro_falsoContext _localctx = new Verdadeiro_falsoContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_verdadeiro_falso);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(109);
+			match(VERDADEIROOUFALSO);
+			setState(110);
+			match(RESPOSTA);
+			setState(111);
+			match(DOISPONTOS);
+			setState(112);
+			((Verdadeiro_falsoContext)_localctx).resposta_verdOuFal = _input.LT(1);
+			_la = _input.LA(1);
+			if ( !(_la==VERDADEIRO || _la==FALSO) ) {
+				((Verdadeiro_falsoContext)_localctx).resposta_verdOuFal = (Token)_errHandler.recoverInline(this);
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
+				consume();
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Palavras_em_faltaContext extends ParserRuleContext {
+		public TerminalNode PALAVRAS_EM_FALTA() { return getToken(ExameParser.PALAVRAS_EM_FALTA, 0); }
+		public TerminalNode RESPOSTA() { return getToken(ExameParser.RESPOSTA, 0); }
+		public TerminalNode DOISPONTOS() { return getToken(ExameParser.DOISPONTOS, 0); }
+		public TerminalNode ABRECHAVETA() { return getToken(ExameParser.ABRECHAVETA, 0); }
+		public TerminalNode FECHACHAVETA() { return getToken(ExameParser.FECHACHAVETA, 0); }
+		public List<Resposta_faltaContext> resposta_falta() {
+			return getRuleContexts(Resposta_faltaContext.class);
+		}
+		public Resposta_faltaContext resposta_falta(int i) {
+			return getRuleContext(Resposta_faltaContext.class,i);
+		}
+		public Palavras_em_faltaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_palavras_em_falta; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterPalavras_em_falta(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitPalavras_em_falta(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitPalavras_em_falta(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Palavras_em_faltaContext palavras_em_falta() throws RecognitionException {
+		Palavras_em_faltaContext _localctx = new Palavras_em_faltaContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_palavras_em_falta);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(114);
+			match(PALAVRAS_EM_FALTA);
+			setState(115);
+			match(RESPOSTA);
+			setState(116);
+			match(DOISPONTOS);
+			setState(117);
+			match(ABRECHAVETA);
+			setState(119); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(118);
+				resposta_falta();
+				}
+				}
+				setState(121); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==RESPOSTA );
+			setState(123);
+			match(FECHACHAVETA);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Resposta_faltaContext extends ParserRuleContext {
+		public Token resp_falta;
+		public TerminalNode RESPOSTA() { return getToken(ExameParser.RESPOSTA, 0); }
+		public TerminalNode INT() { return getToken(ExameParser.INT, 0); }
+		public TerminalNode DOISPONTOS() { return getToken(ExameParser.DOISPONTOS, 0); }
+		public TerminalNode FRASE() { return getToken(ExameParser.FRASE, 0); }
+		public Resposta_faltaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_resposta_falta; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterResposta_falta(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitResposta_falta(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitResposta_falta(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Resposta_faltaContext resposta_falta() throws RecognitionException {
+		Resposta_faltaContext _localctx = new Resposta_faltaContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_resposta_falta);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(125);
+			match(RESPOSTA);
+			setState(126);
+			match(INT);
+			setState(127);
+			match(DOISPONTOS);
+			setState(128);
+			((Resposta_faltaContext)_localctx).resp_falta = match(FRASE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class NumericaContext extends ParserRuleContext {
+		public Token resp_numerica;
+		public TerminalNode NUMERICA() { return getToken(ExameParser.NUMERICA, 0); }
+		public TerminalNode RESPOSTA() { return getToken(ExameParser.RESPOSTA, 0); }
+		public TerminalNode DOISPONTOS() { return getToken(ExameParser.DOISPONTOS, 0); }
+		public TerminalNode NUMERO() { return getToken(ExameParser.NUMERO, 0); }
+		public NumericaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_numerica; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterNumerica(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitNumerica(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitNumerica(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final NumericaContext numerica() throws RecognitionException {
+		NumericaContext _localctx = new NumericaContext(_ctx, getState());
+		enterRule(_localctx, 18, RULE_numerica);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(130);
+			match(NUMERICA);
+			setState(131);
+			match(RESPOSTA);
+			setState(132);
+			match(DOISPONTOS);
+			setState(133);
+			((NumericaContext)_localctx).resp_numerica = match(NUMERO);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Resposta_curtaContext extends ParserRuleContext {
+		public Token resp_curta;
+		public TerminalNode RESPOSTA_CURTA() { return getToken(ExameParser.RESPOSTA_CURTA, 0); }
+		public TerminalNode RESPOSTA() { return getToken(ExameParser.RESPOSTA, 0); }
+		public TerminalNode DOISPONTOS() { return getToken(ExameParser.DOISPONTOS, 0); }
+		public TerminalNode FRASE() { return getToken(ExameParser.FRASE, 0); }
+		public Resposta_curtaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_resposta_curta; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterResposta_curta(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitResposta_curta(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitResposta_curta(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Resposta_curtaContext resposta_curta() throws RecognitionException {
+		Resposta_curtaContext _localctx = new Resposta_curtaContext(_ctx, getState());
+		enterRule(_localctx, 20, RULE_resposta_curta);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(135);
+			match(RESPOSTA_CURTA);
+			setState(136);
+			match(RESPOSTA);
+			setState(137);
+			match(DOISPONTOS);
+			setState(138);
+			((Resposta_curtaContext)_localctx).resp_curta = match(FRASE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Escolha_multiplaContext extends ParserRuleContext {
+		public Token resposta_escolha_multipla;
+		public TerminalNode ESCOLHA_MULTIPLA() { return getToken(ExameParser.ESCOLHA_MULTIPLA, 0); }
+		public TerminalNode OPCOES() { return getToken(ExameParser.OPCOES, 0); }
+		public List<TerminalNode> DOISPONTOS() { return getTokens(ExameParser.DOISPONTOS); }
+		public TerminalNode DOISPONTOS(int i) {
+			return getToken(ExameParser.DOISPONTOS, i);
+		}
+		public TerminalNode ABREPARANTESIS() { return getToken(ExameParser.ABREPARANTESIS, 0); }
+		public TerminalNode FECHAPARANTESIS() { return getToken(ExameParser.FECHAPARANTESIS, 0); }
+		public TerminalNode RESPOSTA() { return getToken(ExameParser.RESPOSTA, 0); }
+		public TerminalNode INT() { return getToken(ExameParser.INT, 0); }
+		public List<Opcao_escolha_multiplaContext> opcao_escolha_multipla() {
+			return getRuleContexts(Opcao_escolha_multiplaContext.class);
+		}
+		public Opcao_escolha_multiplaContext opcao_escolha_multipla(int i) {
+			return getRuleContext(Opcao_escolha_multiplaContext.class,i);
+		}
+		public Escolha_multiplaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_escolha_multipla; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterEscolha_multipla(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitEscolha_multipla(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitEscolha_multipla(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Escolha_multiplaContext escolha_multipla() throws RecognitionException {
+		Escolha_multiplaContext _localctx = new Escolha_multiplaContext(_ctx, getState());
+		enterRule(_localctx, 22, RULE_escolha_multipla);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(140);
+			match(ESCOLHA_MULTIPLA);
+			setState(141);
+			match(OPCOES);
+			setState(142);
+			match(DOISPONTOS);
+			setState(143);
+			match(ABREPARANTESIS);
+			setState(145); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(144);
+				opcao_escolha_multipla();
+				}
+				}
+				setState(147); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==OPCAO );
+			setState(149);
+			match(FECHAPARANTESIS);
+			setState(150);
+			match(RESPOSTA);
+			setState(151);
+			match(DOISPONTOS);
+			setState(152);
+			((Escolha_multiplaContext)_localctx).resposta_escolha_multipla = match(INT);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Opcao_escolha_multiplaContext extends ParserRuleContext {
+		public Token opcao_escolha;
+		public TerminalNode OPCAO() { return getToken(ExameParser.OPCAO, 0); }
+		public TerminalNode INT() { return getToken(ExameParser.INT, 0); }
+		public TerminalNode DOISPONTOS() { return getToken(ExameParser.DOISPONTOS, 0); }
+		public TerminalNode FRASE() { return getToken(ExameParser.FRASE, 0); }
+		public Opcao_escolha_multiplaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_opcao_escolha_multipla; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterOpcao_escolha_multipla(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitOpcao_escolha_multipla(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitOpcao_escolha_multipla(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Opcao_escolha_multiplaContext opcao_escolha_multipla() throws RecognitionException {
+		Opcao_escolha_multiplaContext _localctx = new Opcao_escolha_multiplaContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_opcao_escolha_multipla);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(154);
+			match(OPCAO);
+			setState(155);
+			match(INT);
+			setState(156);
+			match(DOISPONTOS);
+			setState(157);
+			((Opcao_escolha_multiplaContext)_localctx).opcao_escolha = match(FRASE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class CorrespondenciaContext extends ParserRuleContext {
+		public TerminalNode CORRESPONDENCIA() { return getToken(ExameParser.CORRESPONDENCIA, 0); }
+		public TerminalNode TABELA_A() { return getToken(ExameParser.TABELA_A, 0); }
+		public List<TerminalNode> DOISPONTOS() { return getTokens(ExameParser.DOISPONTOS); }
+		public TerminalNode DOISPONTOS(int i) {
+			return getToken(ExameParser.DOISPONTOS, i);
+		}
+		public List<TerminalNode> ABREPARANTESIS() { return getTokens(ExameParser.ABREPARANTESIS); }
+		public TerminalNode ABREPARANTESIS(int i) {
+			return getToken(ExameParser.ABREPARANTESIS, i);
+		}
+		public List<TerminalNode> FECHAPARANTESIS() { return getTokens(ExameParser.FECHAPARANTESIS); }
+		public TerminalNode FECHAPARANTESIS(int i) {
+			return getToken(ExameParser.FECHAPARANTESIS, i);
+		}
+		public TerminalNode TABELA_B() { return getToken(ExameParser.TABELA_B, 0); }
+		public TerminalNode RESPOSTA() { return getToken(ExameParser.RESPOSTA, 0); }
+		public List<Token_correspondenciaContext> token_correspondencia() {
+			return getRuleContexts(Token_correspondenciaContext.class);
+		}
+		public Token_correspondenciaContext token_correspondencia(int i) {
+			return getRuleContext(Token_correspondenciaContext.class,i);
+		}
+		public List<Respostas_correspondenciaContext> respostas_correspondencia() {
+			return getRuleContexts(Respostas_correspondenciaContext.class);
+		}
+		public Respostas_correspondenciaContext respostas_correspondencia(int i) {
+			return getRuleContext(Respostas_correspondenciaContext.class,i);
+		}
+		public CorrespondenciaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_correspondencia; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterCorrespondencia(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitCorrespondencia(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitCorrespondencia(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final CorrespondenciaContext correspondencia() throws RecognitionException {
+		CorrespondenciaContext _localctx = new CorrespondenciaContext(_ctx, getState());
+		enterRule(_localctx, 26, RULE_correspondencia);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(159);
+			match(CORRESPONDENCIA);
+			setState(160);
+			match(TABELA_A);
+			setState(161);
+			match(DOISPONTOS);
+			setState(162);
+			match(ABREPARANTESIS);
+			setState(164); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(163);
+				token_correspondencia();
+				}
+				}
+				setState(166); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==ENUNCIADO );
+			setState(168);
+			match(FECHAPARANTESIS);
+			setState(169);
+			match(TABELA_B);
+			setState(170);
+			match(DOISPONTOS);
+			setState(171);
+			match(ABREPARANTESIS);
+			setState(173); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(172);
+				token_correspondencia();
+				}
+				}
+				setState(175); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==ENUNCIADO );
+			setState(177);
+			match(FECHAPARANTESIS);
+			setState(178);
+			match(RESPOSTA);
+			setState(179);
+			match(DOISPONTOS);
+			setState(181); 
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			do {
+				{
+				{
+				setState(180);
+				respostas_correspondencia();
+				}
+				}
+				setState(183); 
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			} while ( _la==TABELA_A );
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Token_correspondenciaContext extends ParserRuleContext {
+		public Token resp_correspondencia;
+		public TerminalNode ENUNCIADO() { return getToken(ExameParser.ENUNCIADO, 0); }
+		public TerminalNode INT() { return getToken(ExameParser.INT, 0); }
+		public TerminalNode DOISPONTOS() { return getToken(ExameParser.DOISPONTOS, 0); }
+		public TerminalNode FRASE() { return getToken(ExameParser.FRASE, 0); }
+		public Token_correspondenciaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_token_correspondencia; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterToken_correspondencia(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitToken_correspondencia(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitToken_correspondencia(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Token_correspondenciaContext token_correspondencia() throws RecognitionException {
+		Token_correspondenciaContext _localctx = new Token_correspondenciaContext(_ctx, getState());
+		enterRule(_localctx, 28, RULE_token_correspondencia);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(185);
+			match(ENUNCIADO);
+			setState(186);
+			match(INT);
+			setState(187);
+			match(DOISPONTOS);
+			setState(188);
+			((Token_correspondenciaContext)_localctx).resp_correspondencia = match(FRASE);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class Respostas_correspondenciaContext extends ParserRuleContext {
+		public TerminalNode TABELA_A() { return getToken(ExameParser.TABELA_A, 0); }
+		public List<TerminalNode> DOISPONTOS() { return getTokens(ExameParser.DOISPONTOS); }
+		public TerminalNode DOISPONTOS(int i) {
+			return getToken(ExameParser.DOISPONTOS, i);
+		}
+		public List<TerminalNode> INT() { return getTokens(ExameParser.INT); }
+		public TerminalNode INT(int i) {
+			return getToken(ExameParser.INT, i);
+		}
+		public TerminalNode TRACO() { return getToken(ExameParser.TRACO, 0); }
+		public TerminalNode TABELA_B() { return getToken(ExameParser.TABELA_B, 0); }
+		public Respostas_correspondenciaContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_respostas_correspondencia; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).enterRespostas_correspondencia(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof ExameListener ) ((ExameListener)listener).exitRespostas_correspondencia(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof ExameVisitor ) return ((ExameVisitor<? extends T>)visitor).visitRespostas_correspondencia(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final Respostas_correspondenciaContext respostas_correspondencia() throws RecognitionException {
+		Respostas_correspondenciaContext _localctx = new Respostas_correspondenciaContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_respostas_correspondencia);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(190);
+			match(TABELA_A);
+			setState(191);
+			match(DOISPONTOS);
+			setState(192);
+			match(INT);
+			setState(193);
+			match(TRACO);
+			setState(194);
+			match(TABELA_B);
+			setState(195);
+			match(DOISPONTOS);
+			setState(196);
+			match(INT);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static final String _serializedATN =
+		"\u0004\u0001+\u00c7\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
+		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
+		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0002"+
+		"\f\u0007\f\u0002\r\u0007\r\u0002\u000e\u0007\u000e\u0002\u000f\u0007\u000f"+
+		"\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002\u0004\u00021\b\u0002"+
+		"\u000b\u0002\f\u00022\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0002"+
+		"\u0001\u0002\u0001\u0002\u0001\u0002\u0001\u0003\u0001\u0003\u0001\u0003"+
+		"\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003"+
+		"\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003"+
+		"\u0001\u0003\u0001\u0003\u0001\u0003\u0004\u0003N\b\u0003\u000b\u0003"+
+		"\f\u0003O\u0001\u0003\u0001\u0003\u0001\u0004\u0001\u0004\u0001\u0004"+
+		"\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004"+
+		"\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004"+
+		"\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0005\u0001\u0005\u0001\u0005"+
+		"\u0001\u0005\u0001\u0005\u0001\u0005\u0003\u0005l\b\u0005\u0001\u0006"+
+		"\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0006\u0001\u0007\u0001\u0007"+
+		"\u0001\u0007\u0001\u0007\u0001\u0007\u0004\u0007x\b\u0007\u000b\u0007"+
+		"\f\u0007y\u0001\u0007\u0001\u0007\u0001\b\u0001\b\u0001\b\u0001\b\u0001"+
+		"\b\u0001\t\u0001\t\u0001\t\u0001\t\u0001\t\u0001\n\u0001\n\u0001\n\u0001"+
+		"\n\u0001\n\u0001\u000b\u0001\u000b\u0001\u000b\u0001\u000b\u0001\u000b"+
+		"\u0004\u000b\u0092\b\u000b\u000b\u000b\f\u000b\u0093\u0001\u000b\u0001"+
+		"\u000b\u0001\u000b\u0001\u000b\u0001\u000b\u0001\f\u0001\f\u0001\f\u0001"+
+		"\f\u0001\f\u0001\r\u0001\r\u0001\r\u0001\r\u0001\r\u0004\r\u00a5\b\r\u000b"+
+		"\r\f\r\u00a6\u0001\r\u0001\r\u0001\r\u0001\r\u0001\r\u0004\r\u00ae\b\r"+
+		"\u000b\r\f\r\u00af\u0001\r\u0001\r\u0001\r\u0001\r\u0004\r\u00b6\b\r\u000b"+
+		"\r\f\r\u00b7\u0001\u000e\u0001\u000e\u0001\u000e\u0001\u000e\u0001\u000e"+
+		"\u0001\u000f\u0001\u000f\u0001\u000f\u0001\u000f\u0001\u000f\u0001\u000f"+
+		"\u0001\u000f\u0001\u000f\u0001\u000f\u0000\u0000\u0010\u0000\u0002\u0004"+
+		"\u0006\b\n\f\u000e\u0010\u0012\u0014\u0016\u0018\u001a\u001c\u001e\u0000"+
+		"\u0001\u0001\u0000!\"\u00c2\u0000 \u0001\u0000\u0000\u0000\u0002\"\u0001"+
+		"\u0000\u0000\u0000\u0004(\u0001\u0000\u0000\u0000\u0006;\u0001\u0000\u0000"+
+		"\u0000\bS\u0001\u0000\u0000\u0000\nk\u0001\u0000\u0000\u0000\fm\u0001"+
+		"\u0000\u0000\u0000\u000er\u0001\u0000\u0000\u0000\u0010}\u0001\u0000\u0000"+
+		"\u0000\u0012\u0082\u0001\u0000\u0000\u0000\u0014\u0087\u0001\u0000\u0000"+
+		"\u0000\u0016\u008c\u0001\u0000\u0000\u0000\u0018\u009a\u0001\u0000\u0000"+
+		"\u0000\u001a\u009f\u0001\u0000\u0000\u0000\u001c\u00b9\u0001\u0000\u0000"+
+		"\u0000\u001e\u00be\u0001\u0000\u0000\u0000 !\u0003\u0002\u0001\u0000!"+
+		"\u0001\u0001\u0000\u0000\u0000\"#\u0005\u0007\u0000\u0000#$\u0005\u0001"+
+		"\u0000\u0000$%\u0005\u0002\u0000\u0000%&\u0003\u0004\u0002\u0000&\'\u0005"+
+		"\u0003\u0000\u0000\'\u0003\u0001\u0000\u0000\u0000()\u0005\b\u0000\u0000"+
+		")*\u0005\u0001\u0000\u0000*+\u0005$\u0000\u0000+,\u0005\u0006\u0000\u0000"+
+		",-\u0005\u000b\u0000\u0000-.\u0005\u0001\u0000\u0000.0\u0005)\u0000\u0000"+
+		"/1\u0003\u0006\u0003\u00000/\u0001\u0000\u0000\u000012\u0001\u0000\u0000"+
+		"\u000020\u0001\u0000\u0000\u000023\u0001\u0000\u0000\u000034\u0001\u0000"+
+		"\u0000\u000045\u0005\f\u0000\u000056\u0005\u0001\u0000\u000067\u0005%"+
+		"\u0000\u000078\u0005\r\u0000\u000089\u0005\u0001\u0000\u00009:\u0005%"+
+		"\u0000\u0000:\u0005\u0001\u0000\u0000\u0000;<\u0005\u0018\u0000\u0000"+
+		"<=\u0005\b\u0000\u0000=>\u0005\u0001\u0000\u0000>?\u0005$\u0000\u0000"+
+		"?@\u0005\u0006\u0000\u0000@A\u0005\u0002\u0000\u0000AB\u0005\u0015\u0000"+
+		"\u0000BC\u0005\u0001\u0000\u0000CD\u0005)\u0000\u0000DE\u0005\u0014\u0000"+
+		"\u0000EF\u0005\u0001\u0000\u0000FG\u0005$\u0000\u0000GH\u0005\u0017\u0000"+
+		"\u0000HI\u0005\u0001\u0000\u0000IJ\u0005$\u0000\u0000JK\u0005\u0016\u0000"+
+		"\u0000KM\u0005\u0001\u0000\u0000LN\u0003\b\u0004\u0000ML\u0001\u0000\u0000"+
+		"\u0000NO\u0001\u0000\u0000\u0000OM\u0001\u0000\u0000\u0000OP\u0001\u0000"+
+		"\u0000\u0000PQ\u0001\u0000\u0000\u0000QR\u0005\u0003\u0000\u0000R\u0007"+
+		"\u0001\u0000\u0000\u0000ST\u0005\u0019\u0000\u0000TU\u0005\b\u0000\u0000"+
+		"UV\u0005\u0001\u0000\u0000VW\u0005$\u0000\u0000WX\u0005\u0006\u0000\u0000"+
+		"XY\u0005\u0010\u0000\u0000YZ\u0005\u0001\u0000\u0000Z[\u0005)\u0000\u0000"+
+		"[\\\u0005\u001a\u0000\u0000\\]\u0005\u0001\u0000\u0000]^\u0003\n\u0005"+
+		"\u0000^_\u0005\u0013\u0000\u0000_`\u0005\u0001\u0000\u0000`a\u0005$\u0000"+
+		"\u0000ab\u0005\u0014\u0000\u0000bc\u0005\u0001\u0000\u0000cd\u0005$\u0000"+
+		"\u0000d\t\u0001\u0000\u0000\u0000el\u0003\u001a\r\u0000fl\u0003\u0016"+
+		"\u000b\u0000gl\u0003\u0014\n\u0000hl\u0003\u0012\t\u0000il\u0003\u000e"+
+		"\u0007\u0000jl\u0003\f\u0006\u0000ke\u0001\u0000\u0000\u0000kf\u0001\u0000"+
+		"\u0000\u0000kg\u0001\u0000\u0000\u0000kh\u0001\u0000\u0000\u0000ki\u0001"+
+		"\u0000\u0000\u0000kj\u0001\u0000\u0000\u0000l\u000b\u0001\u0000\u0000"+
+		"\u0000mn\u0005\u001e\u0000\u0000no\u0005\n\u0000\u0000op\u0005\u0001\u0000"+
+		"\u0000pq\u0007\u0000\u0000\u0000q\r\u0001\u0000\u0000\u0000rs\u0005\u001f"+
+		"\u0000\u0000st\u0005\n\u0000\u0000tu\u0005\u0001\u0000\u0000uw\u0005\u0002"+
+		"\u0000\u0000vx\u0003\u0010\b\u0000wv\u0001\u0000\u0000\u0000xy\u0001\u0000"+
+		"\u0000\u0000yw\u0001\u0000\u0000\u0000yz\u0001\u0000\u0000\u0000z{\u0001"+
+		"\u0000\u0000\u0000{|\u0005\u0003\u0000\u0000|\u000f\u0001\u0000\u0000"+
+		"\u0000}~\u0005\n\u0000\u0000~\u007f\u0005$\u0000\u0000\u007f\u0080\u0005"+
+		"\u0001\u0000\u0000\u0080\u0081\u0005)\u0000\u0000\u0081\u0011\u0001\u0000"+
+		"\u0000\u0000\u0082\u0083\u0005\u001b\u0000\u0000\u0083\u0084\u0005\n\u0000"+
+		"\u0000\u0084\u0085\u0005\u0001\u0000\u0000\u0085\u0086\u0005(\u0000\u0000"+
+		"\u0086\u0013\u0001\u0000\u0000\u0000\u0087\u0088\u0005 \u0000\u0000\u0088"+
+		"\u0089\u0005\n\u0000\u0000\u0089\u008a\u0005\u0001\u0000\u0000\u008a\u008b"+
+		"\u0005)\u0000\u0000\u008b\u0015\u0001\u0000\u0000\u0000\u008c\u008d\u0005"+
+		"\u001c\u0000\u0000\u008d\u008e\u0005\u000e\u0000\u0000\u008e\u008f\u0005"+
+		"\u0001\u0000\u0000\u008f\u0091\u0005\u0004\u0000\u0000\u0090\u0092\u0003"+
+		"\u0018\f\u0000\u0091\u0090\u0001\u0000\u0000\u0000\u0092\u0093\u0001\u0000"+
+		"\u0000\u0000\u0093\u0091\u0001\u0000\u0000\u0000\u0093\u0094\u0001\u0000"+
+		"\u0000\u0000\u0094\u0095\u0001\u0000\u0000\u0000\u0095\u0096\u0005\u0005"+
+		"\u0000\u0000\u0096\u0097\u0005\n\u0000\u0000\u0097\u0098\u0005\u0001\u0000"+
+		"\u0000\u0098\u0099\u0005$\u0000\u0000\u0099\u0017\u0001\u0000\u0000\u0000"+
+		"\u009a\u009b\u0005\u000f\u0000\u0000\u009b\u009c\u0005$\u0000\u0000\u009c"+
+		"\u009d\u0005\u0001\u0000\u0000\u009d\u009e\u0005)\u0000\u0000\u009e\u0019"+
+		"\u0001\u0000\u0000\u0000\u009f\u00a0\u0005\u001d\u0000\u0000\u00a0\u00a1"+
+		"\u0005\u0011\u0000\u0000\u00a1\u00a2\u0005\u0001\u0000\u0000\u00a2\u00a4"+
+		"\u0005\u0004\u0000\u0000\u00a3\u00a5\u0003\u001c\u000e\u0000\u00a4\u00a3"+
+		"\u0001\u0000\u0000\u0000\u00a5\u00a6\u0001\u0000\u0000\u0000\u00a6\u00a4"+
+		"\u0001\u0000\u0000\u0000\u00a6\u00a7\u0001\u0000\u0000\u0000\u00a7\u00a8"+
+		"\u0001\u0000\u0000\u0000\u00a8\u00a9\u0005\u0005\u0000\u0000\u00a9\u00aa"+
+		"\u0005\u0012\u0000\u0000\u00aa\u00ab\u0005\u0001\u0000\u0000\u00ab\u00ad"+
+		"\u0005\u0004\u0000\u0000\u00ac\u00ae\u0003\u001c\u000e\u0000\u00ad\u00ac"+
+		"\u0001\u0000\u0000\u0000\u00ae\u00af\u0001\u0000\u0000\u0000\u00af\u00ad"+
+		"\u0001\u0000\u0000\u0000\u00af\u00b0\u0001\u0000\u0000\u0000\u00b0\u00b1"+
+		"\u0001\u0000\u0000\u0000\u00b1\u00b2\u0005\u0005\u0000\u0000\u00b2\u00b3"+
+		"\u0005\n\u0000\u0000\u00b3\u00b5\u0005\u0001\u0000\u0000\u00b4\u00b6\u0003"+
+		"\u001e\u000f\u0000\u00b5\u00b4\u0001\u0000\u0000\u0000\u00b6\u00b7\u0001"+
+		"\u0000\u0000\u0000\u00b7\u00b5\u0001\u0000\u0000\u0000\u00b7\u00b8\u0001"+
+		"\u0000\u0000\u0000\u00b8\u001b\u0001\u0000\u0000\u0000\u00b9\u00ba\u0005"+
+		"\u0010\u0000\u0000\u00ba\u00bb\u0005$\u0000\u0000\u00bb\u00bc\u0005\u0001"+
+		"\u0000\u0000\u00bc\u00bd\u0005)\u0000\u0000\u00bd\u001d\u0001\u0000\u0000"+
+		"\u0000\u00be\u00bf\u0005\u0011\u0000\u0000\u00bf\u00c0\u0005\u0001\u0000"+
+		"\u0000\u00c0\u00c1\u0005$\u0000\u0000\u00c1\u00c2\u0005\t\u0000\u0000"+
+		"\u00c2\u00c3\u0005\u0012\u0000\u0000\u00c3\u00c4\u0005\u0001\u0000\u0000"+
+		"\u00c4\u00c5\u0005$\u0000\u0000\u00c5\u001f\u0001\u0000\u0000\u0000\b"+
+		"2Oky\u0093\u00a6\u00af\u00b7";
+	public static final ATN _ATN =
+		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
+	static {
+		_decisionToDFA = new DFA[_ATN.getNumberOfDecisions()];
+		for (int i = 0; i < _ATN.getNumberOfDecisions(); i++) {
+			_decisionToDFA[i] = new DFA(_ATN.getDecisionState(i), i);
+		}
+	}
+}

@@ -1,0 +1,20 @@
+ @startuml
+
+     hide methods
+
+
+     package Manager{
+     class Manager << (E,#FF7700) Entity >> {
+     }
+     }
+
+
+     package Enrollment{
+     class Enrollment << (E,#FF7700) Entity >> {
+     }
+     }
+
+
+     Enrollment "*" -- "1" Manager : is accepted by
+
+     @enduml

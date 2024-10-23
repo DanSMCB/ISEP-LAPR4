@@ -1,0 +1,58 @@
+@startuml
+'http://plantuml.com/skinparam.html
+skinparam handwritten true
+skinparam monochrome true
+skinparam packageStyle rect
+skinparam defaultFontName FG Virgil
+skinparam shadowing false
+
+actor Student as Actor
+participant ListFutureExamsUI as UI
+participant ListFutureExamsController as Controller
+participant AuthzRegistry as AuthzRes
+participant AuthorizationService as AuthzSvc
+participant UserSession as UserS
+participant ListFutureExamsService as Service
+participant Student as Student
+participant ExamRepository as Repo
+
+-> UI: Show future exams
+activate UI
+    UI -> AuthzRes : authz=authorizationService()
+    activate AuthzRes
+    deactivate AuthzRes
+    UI -> AuthzSvc : s=session()
+    activate AuthzSvc
+    deactivate AuthzSvc
+    UI -> UserS : myUser=authenticatedUser()
+    activate UserS
+    deactivate UserS
+
+    UI -> Controller: create(authz, examRepository)
+    activate Controller
+        Controller -> Service : create(authz, examRepository)
+        activate Service
+        deactivate Service
+    deactivate Controller
+    UI -> Student : getMecanographicNumber()
+    activate Student
+    deactivate Student
+    UI -> Controller: listFutureExams(mecanographicNumber)
+
+    activate Controller
+        Controller -> Service: futureExams(mecanographicNumber)
+
+        activate Service
+            Service -> Repo: findFutureExamsBy\nMecanographicNumber(mecanographicNumber)
+            activate Repo
+            Repo --> Service : exams
+            deactivate Repo
+            Service --> Controller : exams
+        deactivate Service
+
+        Controller --> UI: exams
+    deactivate Controller
+
+        UI-->Actor: lists exams
+deactivate UI
+@enduml

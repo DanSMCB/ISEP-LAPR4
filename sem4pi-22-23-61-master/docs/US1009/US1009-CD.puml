@@ -1,0 +1,42 @@
+@startuml
+
+class ApproveRejectApplicationsUI{}
+
+class ApproveRejectApplicationsController{
++createVaccinationCenter(name,address,phone number,e-mail address,\n fax number, website address,opening and closing hours,slot duration,\n coordinator, maximum number of vaccines per slot)
++saveVaccinationCenter()
+}
+
+
+class VaccinationCenterStore{
++craeteVaccinationCenter(name,address,phone number,e-mail address,\n fax number, website address,opening and closing hours,slot duration,\n coordinator, maximum number of vaccines per slot)
++validateVaccinationCenter()
++saveVaccinationCenter()
++addVaccinationCenter()
+}
+
+class Enrollment{
+- name
+- address
+- phoneNumber
+- e-mailAddress
+- faxNumber
+- websiteAddress
+- openingHour
+- closingHour
+- slotDuration
+- coordinator
+- maximumNumberOfVaccinesPerSlot
+
+}
+
+ApproveRejectApplicationsUI ..> ApproveRejectApplicationsController
+
+ApproveRejectApplicationsController ..> VaccinationCenterStore
+ApproveRejectApplicationsController ..> Enrollment
+
+VaccinationCenterStore "1" -> "*" Enrollment : knows >
+
+
+
+@enduml

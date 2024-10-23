@@ -1,0 +1,16 @@
+-----------------
+DESIGN
+-----------------
+
+To design the class scheduling feature, we can utilize the standard layered architecture of the base application. This use case shares similarities with the "RegisterDishType" use case.
+
+Domain Class: Classe
+Controller: ScheduleClassController
+Repository: ClassScheduleRepository
+
+The ClassSchedule class will represent the domain entity for a scheduled class, containing attributes such as class ID, title, start time, end time, start date, end date, day of the week, and the associated teacher.
+
+The ScheduleClassController will handle the business logic for scheduling classes. It will interact with the ClassScheduleRepository to persist and retrieve class schedule data.
+
+Following the layered architecture, the presentation layer (e.g., console or GUI) will interact with the ScheduleClassController to collect input from the user and display relevant information.
+
